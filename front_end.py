@@ -1,60 +1,82 @@
 import streamlit as st
+from azure.storage.blob import BlobServiceClient
+from dotenv import load_dotenv
+import openai
+import os
+import base64
 
-st.set_page_config(page_title="Visio Standardization UI", layout="centered")
+# --- Load environment variables ---
+load_dotenv()
 
-st.title("AI-Driven Visio Standardization")
+AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
+BLOB_CONTAINER_NAME = os.getenv("BLOB_CONTAINER_NAME")
+AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
+AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
+AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")  # GPT-4o deployment
 
-# --- File Upload Section ---
-st.header("1. Upload Visio File")
-uploaded_file = st.file_uploader(
-    "Upload a Visio (.vsdx) file",
-    type=["vsdx"],
-    help="Only .vsdx files are supported"
-)
-if uploaded_file:
-    st.success(f"'{uploaded_file.name}' uploaded (not actually saved in this demo).")
-    st.info("Processing will start automatically in the background.")
+# --- Initialize Azure Blob Storage client ---
+try:
+    blob_service_client = BlobServiceClient.from_connection_string(AZURE_STORAGE_CONNECTION_STRING)
+    container_client = blob_service_client.get_container_client(BLOB_CONTAINER_NAME)
+except Exception as e:
+    st.error(f"Could not connect to Azure Blob Storage: {e}")
+    st.stop()
 
-# --- Show Processing Status ---
-st.header("2. Processing Status")
+# --- Initialize Azure OpenAI client ---
+openai.api_type = "azure"
+openai.api_base = AZURE_OPENAI_ENDPOINT
+openai.api_version = "2024-02-15-preview"
+openai.api_key = AZURE_OPENAI_API_KEY
 
-# Example placeholder data:
-files = [
-    {"name": "Network1.vsdx", "status": "Completed", "output": "Network1_standardized.vsdx"},
-    {"name": "Network2.vsdx", "status": "Processing", "output": None},
-    {"name": "Network3.vsdx", "status": "Flagged", "output": None},
-]
+st.title("PNG Shape Counter with Azure OpenAI GPT-4o")
 
-st.subheader("Uploaded Files")
-for f in files:
-    st.write(f"**{f['name']}**: {f['status']}")
-    if f["status"] == "Completed":
-        st.markdown(f"[Download Standardized File](/dummy/{f['output']})", unsafe_allow_html=True)
-    elif f["status"] == "Flagged":
-        st.warning("Manual review required.")
+st.markdown("""
+Upload a PNG diagram (e.g., a flowchart or schematic), and GPT-4o Vision will tell you how many boxes (rectangles) are in the image.
+""")
 
-# --- Flagged Files/Manual Review ---
-st.header("3. Flagged Files for Manual Review")
-flagged_files = [f for f in files if f["status"] == "Flagged"]
-if flagged_files:
-    for f in flagged_files:
-        st.error(f"{f['name']} needs manual review.")
-        st.markdown(f"[Download Flagged File](/dummy/{f['name']})", unsafe_allow_html=True)
-else:
-    st.info("No files currently flagged for review.")
+uploaded_file = st.file_uploader("Upload PNG image", type=["png"])
 
-# --- Download Original or Output Files ---
-st.header("4. Download Files")
-with st.expander("Show all processed files"):
-    for f in files:
-        if f["status"] == "Completed":
-            st.write(f"{f['output']}")
-            st.markdown(f"[Download](/dummy/{f['output']})", unsafe_allow_html=True)
+if uploaded_file is not None:
+    # Show image preview
+    st.image(uploaded_file, caption="Uploaded Image", use_column_width=True)
+    
+    # Save to Azure Blob Storage
+    if st.button("Upload to Azure Storage"):
+        try:
+            blob_client = container_client.get_blob_client(uploaded_file.name)
+            uploaded_file.seek(0)  # Ensure file pointer is at start
+            blob_client.upload_blob(uploaded_file, overwrite=True)
+            st.success(f"'{uploaded_file.name}' uploaded to Azure Blob Storage!")
+        except Exception as e:
+            st.error(f"Upload failed: {e}")
 
-# --- Settings/Validation (Optional) ---
-with st.expander("Validation Reports / Settings (Demo)"):
-    st.write("No validation issues detected in recent runs.")
-    st.button("Re-run Validation (demo)")
+    # Option to send to GPT-4o
+    if st.button("Analyze with GPT-4o Vision"):
+        # Read image bytes and base64 encode
+        uploaded_file.seek(0)
+        image_bytes = uploaded_file.read()
+        image_base64 = base64.b64encode(image_bytes).decode()
 
-st.write("---")
-st.info("This app is a UI prototype. No backend functionality is connected.")
+        question = st.text_input("Ask a question about the image:", "How many shapes are in this image? WHat are the different types of shapes")
+
+        with st.spinner("Sending image to Azure OpenAI GPT-4o..."):
+            try:
+                response = openai.ChatCompletion.create(
+                    engine=AZURE_OPENAI_DEPLOYMENT,
+                    messages=[
+                        {"role": "system", "content": "You are a helpful assistant who specializes in analyzing diagrams."},
+                        {
+                            "role": "user",
+                            "content": [
+                                {"type": "text", "text": question},
+                                {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{image_base64}"}}
+                            ],
+                        }
+                    ],
+                    max_tokens=500,
+                )
+                answer = response['choices'][0]['message']['content']
+                st.markdown("**GPT-4o's Answer:**")
+                st.write(answer)
+            except Exception as e:
+                st.error(f"Azure OpenAI error: {e}")
