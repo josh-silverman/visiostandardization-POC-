@@ -1,0 +1,5 @@
+azure-storage-blob
+python-dotenv
+openai
+comtypes ; sys_platform == 'win32'
+streamlit

@@ -9,7 +9,7 @@ import base64
 load_dotenv()
 
 AZURE_STORAGE_CONNECTION_STRING = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-BLOB_CONTAINER_NAME = os.getenv("BLOB_CONTAINER_NAME")
+BLOB_CONTAINER = os.getenv("BLOB_CONTAINER")
 AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
 AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")  # GPT-4o deployment
@@ -17,7 +17,7 @@ AZURE_OPENAI_DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")  # GPT-4o deploym
 # --- Initialize Azure Blob Storage client ---
 try:
     blob_service_client = BlobServiceClient.from_connection_string(AZURE_STORAGE_CONNECTION_STRING)
-    container_client = blob_service_client.get_container_client(BLOB_CONTAINER_NAME)
+    container_client = blob_service_client.get_container_client(BLOB_CONTAINER)
 except Exception as e:
     st.error(f"Could not connect to Azure Blob Storage: {e}")
     st.stop()
