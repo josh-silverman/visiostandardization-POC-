@@ -1,14 +1,15 @@
 import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
-
-# Access variables using os.getenv
-azure_openai_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
-azure_openai_api_key = os.getenv("AZURE_OPENAI_API_KEY")
-azure_storage_connection_string = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
-
-print("Azure OpenAI Endpoint:", azure_openai_endpoint)
-print("Azure OpenAI API Key:", azure_openai_api_key)
-print("Azure Storage Connection String:", azure_storage_connection_string)
+def load_config():
+    load_dotenv()
+    config = {
+        "AZURE_OPENAI_ENDPOINT": os.getenv("AZURE_OPENAI_ENDPOINT"),
+        "AZURE_OPENAI_API_KEY": os.getenv("AZURE_OPENAI_API_KEY"),
+        "AZURE_OPENAI_API_VERSION": os.getenv("AZURE_OPENAI_API_VERSION"),
+        "AZURE_OPENAI_DEPLOYMENT": os.getenv("AZURE_OPENAI_DEPLOYMENT"),
+        "AZURE_STORAGE_CONNECTION_STRING": os.getenv("AZURE_STORAGE_CONNECTION_STRING"),
+        "BLOB_CONTAINER": os.getenv("BLOB_CONTAINER", "visio-files"),
+        "STANDARDIZED_CONTAINER": os.getenv("STANDARDIZED_CONTAINER", "standardized-visio"),
+    }
+    return config
