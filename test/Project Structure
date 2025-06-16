@@ -1,0 +1,13 @@
+Visio_standardizer/
+│
+├── app.py                     # Main orchestrator script
+├── config.py                  # Loads environment variables and config
+├── storage.py                 # Azure Blob Storage utilities
+├── visio_convert.py           # Visio to PNG/XML and related helpers
+├── gpt_analysis.py            # GPT-4o analysis (image/XML) functions
+├── standardize.py             # Mapping and Visio file recreation
+├── validation.py              # Validation/checks for outputs
+├── utils.py                   # Common utility functions
+└── requirements.txt           # Required packages
+
+
