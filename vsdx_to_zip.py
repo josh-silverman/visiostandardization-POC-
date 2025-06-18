@@ -9,7 +9,7 @@ connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 # Specify containers and file names
 source_container = "initial-vsdx"
 dest_container = "zipped-files"
-vsdx_file_name = "SDCDMZ Basic Architecture.vsdx"  # <-- Change this to your file name
+vsdx_file_name = "Test-image.vsdx"  # <-- Change this to your file name
 output_zip_name = vsdx_file_name.rsplit('.', 1)[0] + ".zip"
 
 def main():
