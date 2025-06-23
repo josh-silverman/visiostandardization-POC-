@@ -1,0 +1,108 @@
+[
+  {
+    "id": "1",
+    "master": "2",
+    "text": "[Rectangle] 1",
+    "PinX": 9.6864,
+    "PinY": 5.9442,
+    "Width": 1.0,
+    "Height": 1.0,
+    "standard_type": "Rectangle"
+  },
+  {
+    "id": "2",
+    "master": "2",
+    "text": "[Rectangle] 2",
+    "PinX": 11.8612,
+    "PinY": 5.9442,
+    "Width": 1.0,
+    "Height": 1.0,
+    "standard_type": "Rectangle"
+  },
+  {
+    "id": "3",
+    "master": "5",
+    "text": "[Connector] 3",
+    "PinX": 10.7738,
+    "PinY": 5.9442,
+    "Width": 0.6747999999999994,
+    "Height": 0.25,
+    "BeginX": 10.4364,
+    "BeginY": 5.9442,
+    "EndX": 11.1112,
+    "EndY": 5.9442,
+    "standard_type": "Connector"
+  },
+  {
+    "id": "5",
+    "master": "5",
+    "text": "[Connector] 5",
+    "PinX": 12.9486,
+    "PinY": 5.9442,
+    "Width": 0.6747999999999994,
+    "Height": 0.25,
+    "BeginX": 12.6112,
+    "BeginY": 5.9442,
+    "EndX": 13.286,
+    "EndY": 5.9442,
+    "standard_type": "Connector"
+  },
+  {
+    "id": "4",
+    "master": "2",
+    "text": "[Rectangle] 4",
+    "PinX": 14.036,
+    "PinY": 5.9442,
+    "Width": 1.0,
+    "Height": 1.0,
+    "standard_type": "Rectangle"
+  },
+  {
+    "id": "7",
+    "master": "5",
+    "text": "[Connector] 7",
+    "PinX": 14.9735,
+    "PinY": 5.9442,
+    "Width": 0.375,
+    "Height": 0.25,
+    "BeginX": 14.786,
+    "BeginY": 5.9442,
+    "EndX": 15.161,
+    "EndY": 5.9442,
+    "standard_type": "Connector"
+  },
+  {
+    "id": "6",
+    "master": "7",
+    "text": "[Ellipse] 6",
+    "PinX": 15.911,
+    "PinY": 5.9442,
+    "Width": 1.0,
+    "Height": 1.0,
+    "standard_type": "Ellipse"
+  },
+  {
+    "id": "9",
+    "master": "5",
+    "text": "[Connector] 9",
+    "PinX": 16.8485,
+    "PinY": 5.9442,
+    "Width": 0.375,
+    "Height": 0.25,
+    "BeginX": 16.661,
+    "BeginY": 5.9442,
+    "EndX": 17.036,
+    "EndY": 5.9442,
+    "standard_type": "Connector"
+  },
+  {
+    "id": "8",
+    "master": "2",
+    "text": "[Rectangle] 8",
+    "PinX": 17.786,
+    "PinY": 5.9442,
+    "Width": 1.0,
+    "Height": 1.0,
+    "standard_type": "Rectangle"
+  }
+]

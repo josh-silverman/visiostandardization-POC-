@@ -5,8 +5,8 @@
     "text": "Box 1",
     "PinX": 9.6864,
     "PinY": 5.9442,
-    "Width": null,
-    "Height": null,
+    "Width": 1.0,
+    "Height": 1.0,
     "standard_type": "Rectangle"
   },
   {
@@ -15,8 +15,8 @@
     "text": "Box 2",
     "PinX": 11.8612,
     "PinY": 5.9442,
-    "Width": null,
-    "Height": null,
+    "Width": 1.0,
+    "Height": 1.0,
     "standard_type": "Rectangle"
   },
   {
@@ -53,8 +53,8 @@
     "text": "Box 3",
     "PinX": 14.036,
     "PinY": 5.9442,
-    "Width": null,
-    "Height": null,
+    "Width": 1.0,
+    "Height": 1.0,
     "standard_type": "Rectangle"
   },
   {
@@ -77,8 +77,8 @@
     "text": "Box 4",
     "PinX": 15.911,
     "PinY": 5.9442,
-    "Width": null,
-    "Height": null,
+    "Width": 1.0,
+    "Height": 1.0,
     "standard_type": "Ellipse"
   },
   {
@@ -101,8 +101,8 @@
     "text": "box 5",
     "PinX": 17.786,
     "PinY": 5.9442,
-    "Width": null,
-    "Height": null,
+    "Width": 1.0,
+    "Height": 1.0,
     "standard_type": "Rectangle"
   }
 ]
