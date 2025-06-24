@@ -20,17 +20,18 @@ with open(INPUT_JSON, "r") as f:
     data = json.load(f)
 
 shapes = data["shapes"]
-box_connections = data["box_connections"]
+connectors = data["connectors"]
+
 
 # --- 3. Prepare AI prompt (IMPROVED) ---
 PROMPT = (
     "You are an expert in professional network diagramming. "
-    "Given the following JSON representing both shapes and box-to-box connections from a Visio diagram, please:\n"
-    "- For each shape, ensure the label/text will be visually centered and formatted correctly within the shape (e.g., set text alignment properties if available, such as 'text_align': 'center').\n"
-    "- For each different shape, assign a visually distinct fill color (add a 'fill_color' property) to help differentiate them, making sure colors are pleasant and professional. The same shape needs to be the same color (e.g. all rectangles are blue)\n"
-    "- For connectors/arrows (shapes whose master name or nameU contains 'connector'), set the 'line_weight' property to 'bold' to make arrows stand out. Do not change their text unless it already contains a label, and keep it as-is.\n"
-    "- You may adjust the diagram's shape positions (e.g., PinX/PinY) for a more logical/professional layout, but do NOT change the box-to-box connections.\n"
-    "- Retain all other properties and structure (including box_connections).\n"
+    "Given the following JSON representing both 'shapes' and 'connectors' from a Visio diagram, please:\n"
+    "- For each shape in the 'shapes' list, ensure the label/text will be visually centered and formatted correctly within the shape (e.g., add or update a 'text_align': 'center' property if available).\n"
+    "- For each different shape type (use 'master_nameU' or 'master_name'), assign a visually distinct fill color (add a 'fill_color' property) to help differentiate them, using pleasant and professional colors. The same shape type must always get the same color (e.g. all rectangles are blue).\n"
+    "- For connectors/arrows (entries in the 'connectors' list, i.e. those whose 'master_nameU' or 'master_name' contains 'connector'), set the 'line_weight' property to 'bold' to make arrows stand out. Ensure each connector's visual length and size are consistent. Do not change their 'text' unless it already contains a label, and keep it as-is.\n"
+    "- You may adjust the diagram's shape positions (such as PinX/PinY or geometry fields) for a more logical and professional layout, but DO NOT change the shape-to-shape connections specified by 'begin_shape' and 'end_shape' fields in the connectors.\n"
+    "- Retain all other properties and structure, including all fields present in both 'shapes' and 'connectors'.\n"
     "- Return ONLY the updated JSON in the same structure, nothing else.\n\n"
     "JSON:\n"
     f"{json.dumps(data, indent=2)}"
@@ -54,7 +55,7 @@ data_api = {
             "content": PROMPT
         }
     ],
-    "max_tokens": 4000,
+    "max_tokens": 5500,
     "temperature": 0,
     "top_p": 1,
     "frequency_penalty": 0,

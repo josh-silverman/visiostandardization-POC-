@@ -1,22 +1,4 @@
 {
-  "box_connections": [
-    {
-      "from": "Box 4",
-      "to": "box 5"
-    },
-    {
-      "from": "Box 3",
-      "to": "Box 4"
-    },
-    {
-      "from": "Box 2",
-      "to": "Box 3"
-    },
-    {
-      "from": "Box 1",
-      "to": "Box 2"
-    }
-  ],
   "shapes": [
     {
       "id": "1",
@@ -24,6 +6,17 @@
       "type": "Shape",
       "text": "Box 1",
       "master": "2",
+      "geometry": {
+        "BeginX": null,
+        "BeginY": null,
+        "EndX": null,
+        "EndY": null
+      },
+      "line_format": {
+        "LineColor": null,
+        "LineWeight": "0.01041666666666667",
+        "EndArrow": null
+      },
       "master_nameU": "Rectangle",
       "master_name": "Rectangle",
       "master_prompt": "Drag onto the page.",
@@ -116,7 +109,8 @@
             ]
           }
         ]
-      }
+      },
+      "is_connector": false
     },
     {
       "id": "2",
@@ -124,6 +118,17 @@
       "type": "Shape",
       "text": "Box 2",
       "master": "2",
+      "geometry": {
+        "BeginX": null,
+        "BeginY": null,
+        "EndX": null,
+        "EndY": null
+      },
+      "line_format": {
+        "LineColor": null,
+        "LineWeight": "0.01041666666666667",
+        "EndArrow": null
+      },
       "master_nameU": "Rectangle",
       "master_name": "Rectangle",
       "master_prompt": "Drag onto the page.",
@@ -216,29 +221,8 @@
             ]
           }
         ]
-      }
-    },
-    {
-      "id": "3",
-      "name": "",
-      "type": "Shape",
-      "text": "",
-      "master": "5",
-      "master_nameU": "Dynamic connector",
-      "master_name": "Dynamic connector",
-      "master_prompt": "This connector automatically routes between the shapes it connects.",
-      "master_contents": {}
-    },
-    {
-      "id": "5",
-      "name": "",
-      "type": "Shape",
-      "text": "",
-      "master": "5",
-      "master_nameU": "Dynamic connector",
-      "master_name": "Dynamic connector",
-      "master_prompt": "This connector automatically routes between the shapes it connects.",
-      "master_contents": {}
+      },
+      "is_connector": false
     },
     {
       "id": "4",
@@ -246,6 +230,17 @@
       "type": "Shape",
       "text": "Box 3",
       "master": "2",
+      "geometry": {
+        "BeginX": null,
+        "BeginY": null,
+        "EndX": null,
+        "EndY": null
+      },
+      "line_format": {
+        "LineColor": null,
+        "LineWeight": "0.01041666666666667",
+        "EndArrow": null
+      },
       "master_nameU": "Rectangle",
       "master_name": "Rectangle",
       "master_prompt": "Drag onto the page.",
@@ -338,18 +333,8 @@
             ]
           }
         ]
-      }
-    },
-    {
-      "id": "7",
-      "name": "",
-      "type": "Shape",
-      "text": "",
-      "master": "5",
-      "master_nameU": "Dynamic connector",
-      "master_name": "Dynamic connector",
-      "master_prompt": "This connector automatically routes between the shapes it connects.",
-      "master_contents": {}
+      },
+      "is_connector": false
     },
     {
       "id": "6",
@@ -357,21 +342,22 @@
       "type": "Shape",
       "text": "Box 4",
       "master": "7",
+      "geometry": {
+        "BeginX": null,
+        "BeginY": null,
+        "EndX": null,
+        "EndY": null
+      },
+      "line_format": {
+        "LineColor": null,
+        "LineWeight": "0.01041666666666667",
+        "EndArrow": null
+      },
       "master_nameU": "Circle",
       "master_name": "Circle",
       "master_prompt": "Drag onto the page.",
-      "master_contents": {}
-    },
-    {
-      "id": "9",
-      "name": "",
-      "type": "Shape",
-      "text": "",
-      "master": "5",
-      "master_nameU": "Dynamic connector",
-      "master_name": "Dynamic connector",
-      "master_prompt": "This connector automatically routes between the shapes it connects.",
-      "master_contents": {}
+      "master_contents": {},
+      "is_connector": false
     },
     {
       "id": "8",
@@ -379,6 +365,17 @@
       "type": "Shape",
       "text": "box 5",
       "master": "2",
+      "geometry": {
+        "BeginX": null,
+        "BeginY": null,
+        "EndX": null,
+        "EndY": null
+      },
+      "line_format": {
+        "LineColor": null,
+        "LineWeight": "0.01041666666666667",
+        "EndArrow": null
+      },
       "master_nameU": "Rectangle",
       "master_name": "Rectangle",
       "master_prompt": "Drag onto the page.",
@@ -471,7 +468,110 @@
             ]
           }
         ]
-      }
+      },
+      "is_connector": false
+    }
+  ],
+  "connectors": [
+    {
+      "id": "3",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "geometry": {
+        "BeginX": "10.4364",
+        "BeginY": "5.9442",
+        "EndX": "11.1112",
+        "EndY": "5.9442"
+      },
+      "line_format": {
+        "LineColor": "#000000",
+        "LineWeight": "0.0278",
+        "EndArrow": "4"
+      },
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {},
+      "is_connector": true,
+      "begin_shape": "1",
+      "end_shape": "2"
+    },
+    {
+      "id": "5",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "geometry": {
+        "BeginX": "12.6112",
+        "BeginY": "5.9442",
+        "EndX": "13.286",
+        "EndY": "5.9442"
+      },
+      "line_format": {
+        "LineColor": "#000000",
+        "LineWeight": "0.0278",
+        "EndArrow": "4"
+      },
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {},
+      "is_connector": true,
+      "begin_shape": "2",
+      "end_shape": "4"
+    },
+    {
+      "id": "7",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "geometry": {
+        "BeginX": "14.786",
+        "BeginY": "5.9442",
+        "EndX": "15.161",
+        "EndY": "5.9442"
+      },
+      "line_format": {
+        "LineColor": "#000000",
+        "LineWeight": "0.0278",
+        "EndArrow": "4"
+      },
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {},
+      "is_connector": true,
+      "begin_shape": "4",
+      "end_shape": "6"
+    },
+    {
+      "id": "9",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "geometry": {
+        "BeginX": "16.661",
+        "BeginY": "5.9442",
+        "EndX": "17.036",
+        "EndY": "5.9442"
+      },
+      "line_format": {
+        "LineColor": "#000000",
+        "LineWeight": "0.0278",
+        "EndArrow": "4"
+      },
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {},
+      "is_connector": true,
+      "begin_shape": "6",
+      "end_shape": "8"
     }
   ]
 }
