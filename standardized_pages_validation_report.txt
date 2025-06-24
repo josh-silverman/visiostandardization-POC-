@@ -1,3 +1,0 @@
-Validation report for standardized_pages.json
-Total shapes: 0
-All shapes passed validation.

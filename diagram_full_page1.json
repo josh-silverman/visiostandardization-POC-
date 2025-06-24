@@ -1,0 +1,477 @@
+{
+  "box_connections": [
+    {
+      "from": "Box 4",
+      "to": "box 5"
+    },
+    {
+      "from": "Box 3",
+      "to": "Box 4"
+    },
+    {
+      "from": "Box 2",
+      "to": "Box 3"
+    },
+    {
+      "from": "Box 1",
+      "to": "Box 2"
+    }
+  ],
+  "shapes": [
+    {
+      "id": "1",
+      "name": "",
+      "type": "Shape",
+      "text": "Box 1",
+      "master": "2",
+      "master_nameU": "Rectangle",
+      "master_name": "Rectangle",
+      "master_prompt": "Drag onto the page.",
+      "master_contents": {
+        "shape_id": "5",
+        "type": "Shape",
+        "line_style": "7",
+        "fill_style": "7",
+        "text_style": "7",
+        "cells": {
+          "PinX": "1.5",
+          "PinY": "1.5",
+          "Width": "1",
+          "Height": "-1",
+          "LocPinX": "0.5",
+          "LocPinY": "-0.5",
+          "Angle": "0",
+          "FlipX": "0",
+          "FlipY": "0",
+          "ResizeMode": "0",
+          "BeginX": "1",
+          "BeginY": "2",
+          "EndX": "2",
+          "EndY": "1",
+          "TxtPinX": "0",
+          "TxtPinY": "-1",
+          "TxtWidth": "0.5555555555555556",
+          "TxtHeight": "0.2444444444444444",
+          "TxtLocPinX": "0.2777777777777778",
+          "TxtLocPinY": "0.1222222222222222",
+          "TxtAngle": "0",
+          "LockHeight": "1",
+          "LockCalcWH": "1",
+          "HelpTopic": "Vis_SE.chm!#20000",
+          "Copyright": "Copyright 2001 Microsoft Corporation.  All rights reserved.",
+          "NoAlignBox": "1",
+          "DynFeedback": "2",
+          "GlueType": "2",
+          "ObjType": "2",
+          "NoLiveDynamics": "1",
+          "ShapeSplittable": "1",
+          "LayerMember": "0"
+        },
+        "sections": [
+          {
+            "name": "Control",
+            "rows": [
+              {
+                "N": "TextPosition",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1",
+                  "XDyn": "0",
+                  "YDyn": "-1",
+                  "XCon": "5",
+                  "YCon": "0",
+                  "CanGlue": "0",
+                  "Prompt": "Reposition Text"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Geometry",
+            "rows": [
+              {
+                "T": "MoveTo",
+                "IX": "1",
+                "cells": {
+                  "X": "0",
+                  "Y": "0"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "2",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "3",
+                "cells": {
+                  "X": "1",
+                  "Y": "-1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "name": "Rectangle.2",
+      "type": "Shape",
+      "text": "Box 2",
+      "master": "2",
+      "master_nameU": "Rectangle",
+      "master_name": "Rectangle",
+      "master_prompt": "Drag onto the page.",
+      "master_contents": {
+        "shape_id": "5",
+        "type": "Shape",
+        "line_style": "7",
+        "fill_style": "7",
+        "text_style": "7",
+        "cells": {
+          "PinX": "1.5",
+          "PinY": "1.5",
+          "Width": "1",
+          "Height": "-1",
+          "LocPinX": "0.5",
+          "LocPinY": "-0.5",
+          "Angle": "0",
+          "FlipX": "0",
+          "FlipY": "0",
+          "ResizeMode": "0",
+          "BeginX": "1",
+          "BeginY": "2",
+          "EndX": "2",
+          "EndY": "1",
+          "TxtPinX": "0",
+          "TxtPinY": "-1",
+          "TxtWidth": "0.5555555555555556",
+          "TxtHeight": "0.2444444444444444",
+          "TxtLocPinX": "0.2777777777777778",
+          "TxtLocPinY": "0.1222222222222222",
+          "TxtAngle": "0",
+          "LockHeight": "1",
+          "LockCalcWH": "1",
+          "HelpTopic": "Vis_SE.chm!#20000",
+          "Copyright": "Copyright 2001 Microsoft Corporation.  All rights reserved.",
+          "NoAlignBox": "1",
+          "DynFeedback": "2",
+          "GlueType": "2",
+          "ObjType": "2",
+          "NoLiveDynamics": "1",
+          "ShapeSplittable": "1",
+          "LayerMember": "0"
+        },
+        "sections": [
+          {
+            "name": "Control",
+            "rows": [
+              {
+                "N": "TextPosition",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1",
+                  "XDyn": "0",
+                  "YDyn": "-1",
+                  "XCon": "5",
+                  "YCon": "0",
+                  "CanGlue": "0",
+                  "Prompt": "Reposition Text"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Geometry",
+            "rows": [
+              {
+                "T": "MoveTo",
+                "IX": "1",
+                "cells": {
+                  "X": "0",
+                  "Y": "0"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "2",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "3",
+                "cells": {
+                  "X": "1",
+                  "Y": "-1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {}
+    },
+    {
+      "id": "5",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {}
+    },
+    {
+      "id": "4",
+      "name": "",
+      "type": "Shape",
+      "text": "Box 3",
+      "master": "2",
+      "master_nameU": "Rectangle",
+      "master_name": "Rectangle",
+      "master_prompt": "Drag onto the page.",
+      "master_contents": {
+        "shape_id": "5",
+        "type": "Shape",
+        "line_style": "7",
+        "fill_style": "7",
+        "text_style": "7",
+        "cells": {
+          "PinX": "1.5",
+          "PinY": "1.5",
+          "Width": "1",
+          "Height": "-1",
+          "LocPinX": "0.5",
+          "LocPinY": "-0.5",
+          "Angle": "0",
+          "FlipX": "0",
+          "FlipY": "0",
+          "ResizeMode": "0",
+          "BeginX": "1",
+          "BeginY": "2",
+          "EndX": "2",
+          "EndY": "1",
+          "TxtPinX": "0",
+          "TxtPinY": "-1",
+          "TxtWidth": "0.5555555555555556",
+          "TxtHeight": "0.2444444444444444",
+          "TxtLocPinX": "0.2777777777777778",
+          "TxtLocPinY": "0.1222222222222222",
+          "TxtAngle": "0",
+          "LockHeight": "1",
+          "LockCalcWH": "1",
+          "HelpTopic": "Vis_SE.chm!#20000",
+          "Copyright": "Copyright 2001 Microsoft Corporation.  All rights reserved.",
+          "NoAlignBox": "1",
+          "DynFeedback": "2",
+          "GlueType": "2",
+          "ObjType": "2",
+          "NoLiveDynamics": "1",
+          "ShapeSplittable": "1",
+          "LayerMember": "0"
+        },
+        "sections": [
+          {
+            "name": "Control",
+            "rows": [
+              {
+                "N": "TextPosition",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1",
+                  "XDyn": "0",
+                  "YDyn": "-1",
+                  "XCon": "5",
+                  "YCon": "0",
+                  "CanGlue": "0",
+                  "Prompt": "Reposition Text"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Geometry",
+            "rows": [
+              {
+                "T": "MoveTo",
+                "IX": "1",
+                "cells": {
+                  "X": "0",
+                  "Y": "0"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "2",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "3",
+                "cells": {
+                  "X": "1",
+                  "Y": "-1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "7",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {}
+    },
+    {
+      "id": "6",
+      "name": "",
+      "type": "Shape",
+      "text": "Box 4",
+      "master": "7",
+      "master_nameU": "Circle",
+      "master_name": "Circle",
+      "master_prompt": "Drag onto the page.",
+      "master_contents": {}
+    },
+    {
+      "id": "9",
+      "name": "",
+      "type": "Shape",
+      "text": "",
+      "master": "5",
+      "master_nameU": "Dynamic connector",
+      "master_name": "Dynamic connector",
+      "master_prompt": "This connector automatically routes between the shapes it connects.",
+      "master_contents": {}
+    },
+    {
+      "id": "8",
+      "name": "",
+      "type": "Shape",
+      "text": "box 5",
+      "master": "2",
+      "master_nameU": "Rectangle",
+      "master_name": "Rectangle",
+      "master_prompt": "Drag onto the page.",
+      "master_contents": {
+        "shape_id": "5",
+        "type": "Shape",
+        "line_style": "7",
+        "fill_style": "7",
+        "text_style": "7",
+        "cells": {
+          "PinX": "1.5",
+          "PinY": "1.5",
+          "Width": "1",
+          "Height": "-1",
+          "LocPinX": "0.5",
+          "LocPinY": "-0.5",
+          "Angle": "0",
+          "FlipX": "0",
+          "FlipY": "0",
+          "ResizeMode": "0",
+          "BeginX": "1",
+          "BeginY": "2",
+          "EndX": "2",
+          "EndY": "1",
+          "TxtPinX": "0",
+          "TxtPinY": "-1",
+          "TxtWidth": "0.5555555555555556",
+          "TxtHeight": "0.2444444444444444",
+          "TxtLocPinX": "0.2777777777777778",
+          "TxtLocPinY": "0.1222222222222222",
+          "TxtAngle": "0",
+          "LockHeight": "1",
+          "LockCalcWH": "1",
+          "HelpTopic": "Vis_SE.chm!#20000",
+          "Copyright": "Copyright 2001 Microsoft Corporation.  All rights reserved.",
+          "NoAlignBox": "1",
+          "DynFeedback": "2",
+          "GlueType": "2",
+          "ObjType": "2",
+          "NoLiveDynamics": "1",
+          "ShapeSplittable": "1",
+          "LayerMember": "0"
+        },
+        "sections": [
+          {
+            "name": "Control",
+            "rows": [
+              {
+                "N": "TextPosition",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1",
+                  "XDyn": "0",
+                  "YDyn": "-1",
+                  "XCon": "5",
+                  "YCon": "0",
+                  "CanGlue": "0",
+                  "Prompt": "Reposition Text"
+                }
+              }
+            ]
+          },
+          {
+            "name": "Geometry",
+            "rows": [
+              {
+                "T": "MoveTo",
+                "IX": "1",
+                "cells": {
+                  "X": "0",
+                  "Y": "0"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "2",
+                "cells": {
+                  "X": "0",
+                  "Y": "-1"
+                }
+              },
+              {
+                "T": "LineTo",
+                "IX": "3",
+                "cells": {
+                  "X": "1",
+                  "Y": "-1"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -12,24 +12,28 @@ API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
 API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")  # fallback default
 
-# --- 2. Load standardized JSON ---
-INPUT_JSON = "standardized_page1.json"
-OUTPUT_JSON = "enhanced_standardized_page1.json"
+# --- 2. Load the new combined JSON ---
+INPUT_JSON = "diagram_full_page1.json"
+OUTPUT_JSON = "enhanced_diagram_full_page1.json"
 
 with open(INPUT_JSON, "r") as f:
-    shapes = json.load(f)
+    data = json.load(f)
+
+shapes = data["shapes"]
+box_connections = data["box_connections"]
 
 # --- 3. Prepare AI prompt (IMPROVED) ---
 PROMPT = (
     "You are an expert in professional network diagramming. "
-    "Given the following JSON representing shapes and connectors from a Visio diagram, please:\n"
-    "- For each shape, generate a clear, human-friendly label with proper title casing (e.g., 'Box 1', 'Database').\n"
-    "- Do NOT include the shape type (such as [Rectangle], [Ellipse]) in the label.\n"
-    "- For connectors, set the text field to blank unless it already has a meaningful label.\n"
-    "- Do not change the positions or connections.\n"
-    "- Return ONLY the updated JSON, nothing else.\n\n"
+    "Given the following JSON representing both shapes and box-to-box connections from a Visio diagram, please:\n"
+    "- For each shape, ensure the label/text will be visually centered and formatted correctly within the shape (e.g., set text alignment properties if available, such as 'text_align': 'center').\n"
+    "- For each different shape, assign a visually distinct fill color (add a 'fill_color' property) to help differentiate them, making sure colors are pleasant and professional. The same shape needs to be the same color (e.g. all rectangles are blue)\n"
+    "- For connectors/arrows (shapes whose master name or nameU contains 'connector'), set the 'line_weight' property to 'bold' to make arrows stand out. Do not change their text unless it already contains a label, and keep it as-is.\n"
+    "- You may adjust the diagram's shape positions (e.g., PinX/PinY) for a more logical/professional layout, but do NOT change the box-to-box connections.\n"
+    "- Retain all other properties and structure (including box_connections).\n"
+    "- Return ONLY the updated JSON in the same structure, nothing else.\n\n"
     "JSON:\n"
-    f"{json.dumps(shapes, indent=2)}"
+    f"{json.dumps(data, indent=2)}"
 )
 
 # --- 4. Call Azure OpenAI GPT-4o API ---
@@ -39,7 +43,7 @@ headers = {
 }
 endpoint = f"{API_BASE}openai/deployments/{DEPLOYMENT}/chat/completions?api-version={API_VERSION}"
 
-data = {
+data_api = {
     "messages": [
         {
             "role": "system",
@@ -50,7 +54,7 @@ data = {
             "content": PROMPT
         }
     ],
-    "max_tokens": 2500,
+    "max_tokens": 4000,
     "temperature": 0,
     "top_p": 1,
     "frequency_penalty": 0,
@@ -60,7 +64,7 @@ data = {
 print("Sending request to Azure OpenAI...")
 
 try:
-    response = requests.post(endpoint, headers=headers, json=data, timeout=60)
+    response = requests.post(endpoint, headers=headers, json=data_api, timeout=90)
     response.raise_for_status()
 except Exception as e:
     print(f"API request failed: {e}")
@@ -91,26 +95,21 @@ json_str = extract_json(ai_content)
 
 # --- 6. Parse and validate JSON ---
 try:
-    enhanced_shapes = json.loads(json_str)
+    enhanced_data = json.loads(json_str)
 except Exception as e:
     print("Failed to parse AI output as JSON!")
     print("AI output was:\n", ai_content)
     exit(1)
 
-# --- 7. Post-process: Remove shape type prefixes and title-case labels ---
-for shape in enhanced_shapes:
-    # Remove leading [Rectangle], [Ellipse], etc.
-    shape['text'] = re.sub(r'^\s*\[[^\]]+\]\s*', '', shape['text']).strip()
-    # Title-case non-empty labels
-    if shape['text']:
-        shape['text'] = shape['text'].title()
+# --- 7. No post-processing of text ---
+# (We keep the text field as returned by the LLM, as instructed in the prompt.)
 
 # --- 8. Save the enhanced JSON ---
 with open(OUTPUT_JSON, "w") as f:
-    json.dump(enhanced_shapes, f, indent=2)
+    json.dump(enhanced_data, f, indent=2)
 
 print(f"AI enhancement complete. Enhanced JSON saved to {OUTPUT_JSON}.")
 
 # --- 9. Optionally print a summary ---
 print(f"Original shape count: {len(shapes)}")
-print(f"Enhanced shape count: {len(enhanced_shapes)}")
+print(f"Enhanced shape count: {len(enhanced_data['shapes'])}")
