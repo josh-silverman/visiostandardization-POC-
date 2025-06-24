@@ -84,7 +84,7 @@ connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
 # Specify containers and file names
 source_container = "zipped-files"
 dest_container = "result-vsdx"
-zip_file_name = "SDCDMZ Basic Architecture.zip"  # <-- Change this to your file name
+zip_file_name = "test_1.zip"  # <-- Change this to your file name
 
 # Compute output name: updated-{filename}.vsdx
 base_name = os.path.splitext(os.path.basename(zip_file_name))[0]
