@@ -2,7 +2,7 @@
   {
     "id": "1",
     "master": "2",
-    "text": "[Rectangle] 1",
+    "text": "Box 1",
     "PinX": 9.6864,
     "PinY": 5.9442,
     "Width": 1.0,
@@ -12,7 +12,7 @@
   {
     "id": "2",
     "master": "2",
-    "text": "[Rectangle] 2",
+    "text": "Box 2",
     "PinX": 11.8612,
     "PinY": 5.9442,
     "Width": 1.0,
@@ -22,7 +22,7 @@
   {
     "id": "3",
     "master": "5",
-    "text": "[Connector] 3",
+    "text": "",
     "PinX": 10.7738,
     "PinY": 5.9442,
     "Width": 0.6747999999999994,
@@ -36,7 +36,7 @@
   {
     "id": "5",
     "master": "5",
-    "text": "[Connector] 5",
+    "text": "",
     "PinX": 12.9486,
     "PinY": 5.9442,
     "Width": 0.6747999999999994,
@@ -50,7 +50,7 @@
   {
     "id": "4",
     "master": "2",
-    "text": "[Rectangle] 4",
+    "text": "Box 3",
     "PinX": 14.036,
     "PinY": 5.9442,
     "Width": 1.0,
@@ -60,7 +60,7 @@
   {
     "id": "7",
     "master": "5",
-    "text": "[Connector] 7",
+    "text": "",
     "PinX": 14.9735,
     "PinY": 5.9442,
     "Width": 0.375,
@@ -74,7 +74,7 @@
   {
     "id": "6",
     "master": "7",
-    "text": "[Ellipse] 6",
+    "text": "Box 4",
     "PinX": 15.911,
     "PinY": 5.9442,
     "Width": 1.0,
@@ -84,7 +84,7 @@
   {
     "id": "9",
     "master": "5",
-    "text": "[Connector] 9",
+    "text": "",
     "PinX": 16.8485,
     "PinY": 5.9442,
     "Width": 0.375,
@@ -98,7 +98,7 @@
   {
     "id": "8",
     "master": "2",
-    "text": "[Rectangle] 8",
+    "text": "Box 5",
     "PinX": 17.786,
     "PinY": 5.9442,
     "Width": 1.0,

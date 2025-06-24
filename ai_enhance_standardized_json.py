@@ -19,12 +19,13 @@ OUTPUT_JSON = "enhanced_standardized_page1.json"
 with open(INPUT_JSON, "r") as f:
     shapes = json.load(f)
 
-# --- 3. Prepare AI prompt ---
+# --- 3. Prepare AI prompt (IMPROVED) ---
 PROMPT = (
     "You are an expert in professional network diagramming. "
     "Given the following JSON representing shapes and connectors from a Visio diagram, please:\n"
-    "- Standardize all shape labels to the format '[ShapeType] [ID]'.\n"
-    "- For rectangles, ensure their text field follows this format.\n"
+    "- For each shape, generate a clear, human-friendly label with proper title casing (e.g., 'Box 1', 'Database').\n"
+    "- Do NOT include the shape type (such as [Rectangle], [Ellipse]) in the label.\n"
+    "- For connectors, set the text field to blank unless it already has a meaningful label.\n"
     "- Do not change the positions or connections.\n"
     "- Return ONLY the updated JSON, nothing else.\n\n"
     "JSON:\n"
@@ -96,14 +97,20 @@ except Exception as e:
     print("AI output was:\n", ai_content)
     exit(1)
 
-# --- 7. Save the enhanced JSON ---
+# --- 7. Post-process: Remove shape type prefixes and title-case labels ---
+for shape in enhanced_shapes:
+    # Remove leading [Rectangle], [Ellipse], etc.
+    shape['text'] = re.sub(r'^\s*\[[^\]]+\]\s*', '', shape['text']).strip()
+    # Title-case non-empty labels
+    if shape['text']:
+        shape['text'] = shape['text'].title()
+
+# --- 8. Save the enhanced JSON ---
 with open(OUTPUT_JSON, "w") as f:
     json.dump(enhanced_shapes, f, indent=2)
 
 print(f"AI enhancement complete. Enhanced JSON saved to {OUTPUT_JSON}.")
 
-# --- 8. Optionally print a summary ---
+# --- 9. Optionally print a summary ---
 print(f"Original shape count: {len(shapes)}")
 print(f"Enhanced shape count: {len(enhanced_shapes)}")
-
-# If you want to see what was changed, you could diff the two dictionaries here.
