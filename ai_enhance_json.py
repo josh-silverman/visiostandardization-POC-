@@ -10,107 +10,99 @@ load_dotenv()
 API_BASE = os.getenv("AZURE_OPENAI_API_BASE")
 API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
 DEPLOYMENT = os.getenv("AZURE_OPENAI_DEPLOYMENT")
-API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")  # fallback default
+API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")
 
-# --- 2. Load the new combined JSON ---
-INPUT_JSON = "diagram_full_page1.json"
+if not (API_BASE and API_KEY and DEPLOYMENT):
+    raise EnvironmentError("Missing one or more required Azure OpenAI environment variables.")
+
+# --- 2. Load the input JSON ---
+INPUT_JSON = "page1.json"
 OUTPUT_JSON = "enhanced_diagram_full_page1.json"
 
-with open(INPUT_JSON, "r") as f:
-    data = json.load(f)
+if not os.path.exists(INPUT_JSON):
+    raise FileNotFoundError(f"Input file not found: {INPUT_JSON}")
 
-shapes = data["shapes"]
-connectors = data["connectors"]
+with open(INPUT_JSON, "r", encoding="utf-8") as f:
+    diagram_json = json.load(f)
 
+# --- 3. Compose the user prompt for transformation ---
+user_prompt = """
+You are a diagram JSON standardizer and enhancer.
 
-# --- 3. Prepare AI prompt (IMPROVED) ---
-PROMPT = (
-    "You are an expert in professional network diagramming. "
-    "Given the following JSON representing both 'shapes' and 'connectors' from a Visio diagram, please:\n"
-    "- For each shape in the 'shapes' list, ensure the label/text will be visually centered and formatted correctly within the shape (e.g., add or update a 'text_align': 'center' property if available).\n"
-    "- For each different shape type (use 'master_nameU' or 'master_name'), assign a visually distinct fill color (add a 'fill_color' property) to help differentiate them, using pleasant and professional colors. The same shape type must always get the same color (e.g. all rectangles are blue).\n"
-    "- For connectors/arrows (entries in the 'connectors' list, i.e. those whose 'master_nameU' or 'master_name' contains 'connector'), set the 'line_weight' property to 'bold' to make arrows stand out. Ensure each connector's visual length and size are consistent. Do not change their 'text' unless it already contains a label, and keep it as-is.\n"
-    "- You may adjust the diagram's shape positions (such as PinX/PinY or geometry fields) for a more logical and professional layout, but DO NOT change the shape-to-shape connections specified by 'begin_shape' and 'end_shape' fields in the connectors.\n"
-    "- Retain all other properties and structure, including all fields present in both 'shapes' and 'connectors'.\n"
-    "- Return ONLY the updated JSON in the same structure, nothing else.\n\n"
-    "JSON:\n"
-    f"{json.dumps(data, indent=2)}"
-)
+Given the following Visio diagram JSON, do the following for each shape and connection:
+- Ensure every shape has: "id" (string), "type", "master", "cells", "text", "role", "label", and "FillColor".
+- For connector shapes (master "9"), set "role": "connector", set cells["FillColor"] = 16777215 (white), and set cells["LineColor"] = 0 (black).
+- For non-connector shapes, set "role": "person" (or "group" if you infer a grouping), and set cells["FillColor"] = 15790320 (light blue, e.g., AliceBlue).
+- If you use a "group" field, you may assign a unique fill color per group instead of by role.
+- If a shape is missing "text", set it to the "label" or to "Unnamed".
+- For each shape, add a "label" field: use the "text" if present, otherwise use "Unnamed".
+- Ensure all "id" fields and all references in "connections" are strings, and that all referenced IDs exist in the "shapes" list.
+- If you can, infer and add a "group" field (e.g., "family", "department", or "none").
+- If you can, add a "direction" field with values "start", "end", or "middle" based on the connections (e.g., "start" = no incoming, "end" = no outgoing).
+- If there are missing or invalid fields, fill or correct them.
+- At the end, provide a one-paragraph summary of the diagram (who, how many, how they're connected).
 
-# --- 4. Call Azure OpenAI GPT-4o API ---
+For color fields, always use integer values (not strings) for colors.
+
+Return only the updated JSON and the summary, no markdown, no explanation.
+
+Here is the original JSON:
+""" + json.dumps(diagram_json, indent=2)
+
+# --- 4. Prepare the Azure OpenAI API call ---
 headers = {
-    "api-key": API_KEY,
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "api-key": API_KEY
 }
-endpoint = f"{API_BASE}openai/deployments/{DEPLOYMENT}/chat/completions?api-version={API_VERSION}"
 
-data_api = {
+endpoint = f"{API_BASE}/openai/deployments/{DEPLOYMENT}/chat/completions?api-version={API_VERSION}"
+
+payload = {
     "messages": [
-        {
-            "role": "system",
-            "content": "You are a helpful assistant for network diagram standardization."
-        },
-        {
-            "role": "user",
-            "content": PROMPT
-        }
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": user_prompt}
     ],
-    "max_tokens": 5500,
-    "temperature": 0,
-    "top_p": 1,
-    "frequency_penalty": 0,
-    "presence_penalty": 0
+    "temperature": 0.2,
+    "max_tokens": 6000
 }
 
+# --- 5. Make the API call ---
 print("Sending request to Azure OpenAI...")
-
-try:
-    response = requests.post(endpoint, headers=headers, json=data_api, timeout=90)
-    response.raise_for_status()
-except Exception as e:
-    print(f"API request failed: {e}")
+response = requests.post(endpoint, headers=headers, json=payload)
+if response.status_code != 200:
+    print("Error:", response.status_code, response.text)
     exit(1)
 
 result = response.json()
+
+# --- 6. Extract and save the LLM's response content as JSON ---
 try:
-    ai_content = result['choices'][0]['message']['content']
+    enhanced_content = result["choices"][0]["message"]["content"]
+
+    # Remove markdown code blocks, if present
+    match = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", enhanced_content)
+    if match:
+        enhanced_content = match.group(1).strip()
+
+    # Split at 'Summary:'
+    summary_split = enhanced_content.split("Summary:", 1)
+    json_text = summary_split[0].strip()
+    summary_text = summary_split[1].strip() if len(summary_split) > 1 else ""
+
+    enhanced_json = json.loads(json_text)
+
+    with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
+        json.dump(enhanced_json, f, indent=2, ensure_ascii=False)
+    print(f"LLM output saved to {OUTPUT_JSON}")
+
+    if summary_text:
+        with open("diagram_summary.txt", "w", encoding="utf-8") as f:
+            f.write(summary_text)
+        print("Diagram summary saved to diagram_summary.txt")
+
 except Exception as e:
-    print(f"Could not extract AI response: {e}")
-    print("Raw response:", result)
+    print("Failed to extract or parse LLM response:", e)
+    print("Raw response content:")
+    print(enhanced_content)
     exit(1)
 
-# --- 5. Extract JSON from AI response ---
-def extract_json(text):
-    # Try to extract from a code block first
-    match = re.search(r'```json(.*?)```', text, re.DOTALL)
-    if match:
-        return match.group(1).strip()
-    # Try to extract from a generic code block
-    match = re.search(r'```(.*?)```', text, re.DOTALL)
-    if match:
-        return match.group(1).strip()
-    # Otherwise, assume the entire text is JSON
-    return text.strip()
-
-json_str = extract_json(ai_content)
-
-# --- 6. Parse and validate JSON ---
-try:
-    enhanced_data = json.loads(json_str)
-except Exception as e:
-    print("Failed to parse AI output as JSON!")
-    print("AI output was:\n", ai_content)
-    exit(1)
-
-# --- 7. No post-processing of text ---
-# (We keep the text field as returned by the LLM, as instructed in the prompt.)
-
-# --- 8. Save the enhanced JSON ---
-with open(OUTPUT_JSON, "w") as f:
-    json.dump(enhanced_data, f, indent=2)
-
-print(f"AI enhancement complete. Enhanced JSON saved to {OUTPUT_JSON}.")
-
-# --- 9. Optionally print a summary ---
-print(f"Original shape count: {len(shapes)}")
-print(f"Enhanced shape count: {len(enhanced_data['shapes'])}")

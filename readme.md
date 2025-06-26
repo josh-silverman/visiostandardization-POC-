@@ -67,3 +67,35 @@ This project provides a workflow to enhance and standardize Visio diagrams using
 
 *If you need details for each script’s arguments or want a one-liner for each step, just ask!*
 
+
+
+Summary of Your Visio + LLM Enhancement Pipeline
+You have built a robust, semi-automated pipeline that takes raw Visio diagram data, enhances it using a Large Language Model (LLM), and updates the diagram’s XML representation—making your Visio diagrams smarter, cleaner, and visually informative.
+
+How Your Pipeline Works:
+Extract Raw Diagram Data:
+
+You start with a Visio diagram and export or extract its shapes and connections as JSON (e.g., page1.json).
+Standardize and Enrich with LLM:
+
+You send this JSON to an LLM (via Azure OpenAI) with a carefully crafted prompt.
+The LLM:
+Fills in missing fields (like labels, roles, and directions).
+Standardizes and cleans up the structure.
+Infers metadata (roles, groups, connection direction).
+Adds styling fields (e.g., FillColor, LineColor) based on business rules (like color-coding by role or group).
+Returns a summary paragraph describing the diagram.
+Save Enhanced Output:
+
+You save the LLM’s enhanced JSON and its diagram summary for documentation.
+Update Visio XML:
+
+A Python script reads the enhanced JSON and updates your Visio XML files:
+Applies standardized labels, text, and attributes.
+Updates shape and connector styles (colors, lines) according to the enhanced data.
+Optionally, makes a backup of the original XML for safety.
+Ensures all references and fields are correct and complete.
+Visual Result:
+
+You open the updated Visio file and see a clean, labeled, color-coded diagram, with all shapes and connectors reflecting their roles and relationships.
+The diagram summary provides a human-readable overview of the structure.

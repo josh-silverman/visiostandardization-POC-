@@ -1,96 +1,84 @@
 import xml.etree.ElementTree as ET
 import json
+import shutil
+import os
+from xml.dom import minidom
 
-# Load the enhanced JSON
-with open("enhanced_diagram_full_page1.json") as f:
-    enhanced_data = json.load(f)
-shapes = enhanced_data["shapes"]
-shape_lookup = {shape["id"]: shape for shape in shapes}
-
-# Define paths and namespaces
+STD_JSON = "enhanced_diagram_full_page1.json"
 PAGE_XML = "output_xml/visio/pages/page1.xml"
+
+# Backup the original XML
+if os.path.exists(PAGE_XML):
+    backup_path = PAGE_XML + ".bak"
+    shutil.copy(PAGE_XML, backup_path)
+    print(f"Backed up original XML to {backup_path}")
+
+with open(STD_JSON, "r", encoding="utf-8") as f:
+    data = json.load(f)
+
+shapes = data["shapes"]
+shape_lookup = {str(shape["id"]): shape for shape in shapes}
+
 VNS = "http://schemas.microsoft.com/office/visio/2012/main"
 NS = {'v': VNS}
-ET.register_namespace('', VNS)  # This prevents namespace prefixes in output
+ET.register_namespace('', VNS)
 
-# Parse the XML file
+def pretty_print_xml(elem):
+    """Return a pretty-printed XML string for the Element."""
+    rough_string = ET.tostring(elem, encoding="utf-8")
+    reparsed = minidom.parseString(rough_string)
+    return reparsed.toprettyxml(indent="  ", encoding="utf-8")
+
 tree = ET.parse(PAGE_XML)
 root = tree.getroot()
+
+updated_count = 0
+missing_shapes = []
 
 for shape_elem in root.findall(".//v:Shape", NS):
     shape_id = shape_elem.attrib.get("ID")
     if shape_id and shape_id in shape_lookup:
         shape_data = shape_lookup[shape_id]
-        
-        # --- Remove and update <Text> ---
+
+        # --- Update Text ---
         for old_text_elem in shape_elem.findall("v:Text", NS):
             shape_elem.remove(old_text_elem)
-        new_text_elem = ET.SubElement(shape_elem, f"{{{VNS}}}Text")
-        new_text_elem.text = shape_data.get("text", "")
+        new_text = shape_data.get("text", None)
+        if new_text is not None:
+            new_text_elem = ET.SubElement(shape_elem, f"{{{VNS}}}Text")
+            new_text_elem.text = new_text
 
-        # --- Remove and update fill color (for shapes with fill_color) ---
-        for cell_elem in list(shape_elem.findall("v:Cell", NS)):
-            if cell_elem.get("N") in ("FillForegnd", "FillPattern"):
-                shape_elem.remove(cell_elem)
-        fill_color = shape_data.get("fill_color")
-        if fill_color:
-            fill_cell = ET.SubElement(shape_elem, f"{{{VNS}}}Cell")
-            fill_cell.set("N", "FillForegnd")
-            fill_cell.set("V", fill_color)
-            fillpat_cell = ET.SubElement(shape_elem, f"{{{VNS}}}Cell")
-            fillpat_cell.set("N", "FillPattern")
-            fillpat_cell.set("V", "1")
+        # --- Update Cells ---
+        cells = shape_data.get("cells", {})
+        # Track which cells are updated/created
+        updated_cells = set()
+        for cell_name, cell_value in cells.items():
+            cell_elem = None
+            for c in shape_elem.findall("v:Cell", NS):
+                if c.attrib.get("N") == cell_name:
+                    cell_elem = c
+                    break
+            if cell_elem is not None:
+                cell_elem.set("V", str(cell_value))
+            else:
+                ET.SubElement(shape_elem, f"{{{VNS}}}Cell", {"N": cell_name, "V": str(cell_value)})
+            updated_cells.add(cell_name)
+        # Optionally: remove <Cell> elements not present in JSON (not always desired)
+        # for c in list(shape_elem.findall("v:Cell", NS)):
+        #     if c.attrib.get("N") not in updated_cells:
+        #         shape_elem.remove(c)
 
-        # --- Text alignment (if available) ---
-        text_align = shape_data.get("text_align")
-        if text_align:
-            # Remove old alignment cell if present
-            for cell_elem in list(shape_elem.findall("v:Cell", NS)):
-                if cell_elem.get("N") == "TxtAlign":
-                    shape_elem.remove(cell_elem)
-            # Visio: 0=left, 1=center, 2=right
-            align_map = {"left": "0", "center": "1", "right": "2"}
-            align_val = align_map.get(text_align.lower(), "1")
-            align_cell = ET.SubElement(shape_elem, f"{{{VNS}}}Cell")
-            align_cell.set("N", "TxtAlign")
-            align_cell.set("V", align_val)
+        updated_count += 1
+    else:
+        missing_shapes.append(shape_id)
 
-        # --- Update position if PinX/PinY in master_contents/cells ---
-        master_cells = shape_data.get("master_contents", {}).get("cells", {})
-        pinx = master_cells.get("PinX")
-        piny = master_cells.get("PinY")
-        if pinx or piny:
-            xform = shape_elem.find("v:XForm", NS)
-            if xform is not None:
-                pinx_elem = xform.find("v:PinX", NS)
-                piny_elem = xform.find("v:PinY", NS)
-                if pinx and pinx_elem is not None:
-                    pinx_elem.text = str(pinx)
-                if piny and piny_elem is not None:
-                    piny_elem.text = str(piny)
+# Write pretty-printed XML
+pretty_xml = pretty_print_xml(root)
+with open(PAGE_XML, "wb") as f:
+    f.write(pretty_xml)
+print(f"Updated {PAGE_XML} with standardized text and cells for {updated_count} shapes.")
 
-        # --- Connector styling ---
-        master_nameU = shape_data.get("master_nameU", "").lower()
-        if "connector" in master_nameU:
-            # Remove any existing connector styling
-            for cell_elem in list(shape_elem.findall("v:Cell", NS)):
-                if cell_elem.get("N") in ("LineColor", "LineWeight", "EndArrow"):
-                    shape_elem.remove(cell_elem)
-            # Set line color to black
-            linecolor_cell = ET.SubElement(shape_elem, f"{{{VNS}}}Cell")
-            linecolor_cell.set("N", "LineColor")
-            linecolor_cell.set("V", "#000000")
-            # Set line weight to bold if specified
-            if shape_data.get("line_weight") == "bold":
-                lineweight_cell = ET.SubElement(shape_elem, f"{{{VNS}}}Cell")
-                lineweight_cell.set("N", "LineWeight")
-                lineweight_cell.set("V", "0.0278")  # 2pt in inches
-            # Set end arrow (standard arrowhead)
-            endarrow_cell = ET.SubElement(shape_elem, f"{{{VNS}}}Cell")
-            endarrow_cell.set("N", "EndArrow")
-            endarrow_cell.set("V", "4")
-
-# Save the updated XML
-tree.write(PAGE_XML, encoding="utf-8", xml_declaration=True)
-
-print(f"Updated shape texts, colors, layout, and connector styles in '{PAGE_XML}' from enhanced_diagram_full_page1.json.")
+if missing_shapes:
+    print(f"Warning: {len(missing_shapes)} shapes in XML had no match in standardized JSON (IDs: {missing_shapes})")
+else:
+    print("All shapes in XML matched and updated from standardized JSON.")
