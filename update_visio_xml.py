@@ -7,11 +7,6 @@ from xml.dom import minidom
 STD_JSON = "enhanced_diagram_full_page1.json"
 PAGE_XML = "output_xml/visio/pages/page1.xml"
 
-# Backup the original XML
-if os.path.exists(PAGE_XML):
-    backup_path = PAGE_XML + ".bak"
-    shutil.copy(PAGE_XML, backup_path)
-    print(f"Backed up original XML to {backup_path}")
 
 with open(STD_JSON, "r", encoding="utf-8") as f:
     data = json.load(f)
