@@ -1,79 +1,47 @@
-import xml.etree.ElementTree as ET
-import json
-import shutil
 import os
-from xml.dom import minidom
+import json
+import xmltodict
+import re
 
-STD_JSON = "enhanced_diagram_full_page1.json"
-PAGE_XML = "output_xml/visio/pages/page1.xml"
+INPUT_JSON = "roundtrip_json/pages/page1.json"
+OUTPUT_XML = "output_xml/visio/pages/page1.xml"
 
-
-with open(STD_JSON, "r", encoding="utf-8") as f:
-    data = json.load(f)
-
-shapes = data["shapes"]
-shape_lookup = {str(shape["id"]): shape for shape in shapes}
-
-VNS = "http://schemas.microsoft.com/office/visio/2012/main"
-NS = {'v': VNS}
-ET.register_namespace('', VNS)
-
-def pretty_print_xml(elem):
-    """Return a pretty-printed XML string for the Element."""
-    rough_string = ET.tostring(elem, encoding="utf-8")
-    reparsed = minidom.parseString(rough_string)
-    return reparsed.toprettyxml(indent="  ", encoding="utf-8")
-
-tree = ET.parse(PAGE_XML)
-root = tree.getroot()
-
-updated_count = 0
-missing_shapes = []
-
-for shape_elem in root.findall(".//v:Shape", NS):
-    shape_id = shape_elem.attrib.get("ID")
-    if shape_id and shape_id in shape_lookup:
-        shape_data = shape_lookup[shape_id]
-
-        # --- Update Text ---
-        for old_text_elem in shape_elem.findall("v:Text", NS):
-            shape_elem.remove(old_text_elem)
-        new_text = shape_data.get("text", None)
-        if new_text is not None:
-            new_text_elem = ET.SubElement(shape_elem, f"{{{VNS}}}Text")
-            new_text_elem.text = new_text
-
-        # --- Update Cells ---
-        cells = shape_data.get("cells", {})
-        # Track which cells are updated/created
-        updated_cells = set()
-        for cell_name, cell_value in cells.items():
-            cell_elem = None
-            for c in shape_elem.findall("v:Cell", NS):
-                if c.attrib.get("N") == cell_name:
-                    cell_elem = c
-                    break
-            if cell_elem is not None:
-                cell_elem.set("V", str(cell_value))
-            else:
-                ET.SubElement(shape_elem, f"{{{VNS}}}Cell", {"N": cell_name, "V": str(cell_value)})
-            updated_cells.add(cell_name)
-        # Optionally: remove <Cell> elements not present in JSON (not always desired)
-        # for c in list(shape_elem.findall("v:Cell", NS)):
-        #     if c.attrib.get("N") not in updated_cells:
-        #         shape_elem.remove(c)
-
-        updated_count += 1
+def strip_ns(obj):
+    if isinstance(obj, dict):
+        new_obj = {}
+        for k, v in obj.items():
+            tag = re.sub(r'^(.*[:}])', '', k)
+            new_obj[tag] = strip_ns(v)
+        return new_obj
+    elif isinstance(obj, list):
+        return [strip_ns(x) for x in obj]
     else:
-        missing_shapes.append(shape_id)
+        return obj
 
-# Write pretty-printed XML
-pretty_xml = pretty_print_xml(root)
-with open(PAGE_XML, "wb") as f:
-    f.write(pretty_xml)
-print(f"Updated {PAGE_XML} with standardized text and cells for {updated_count} shapes.")
+def main():
+    with open(INPUT_JSON, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-if missing_shapes:
-    print(f"Warning: {len(missing_shapes)} shapes in XML had no match in standardized JSON (IDs: {missing_shapes})")
-else:
-    print("All shapes in XML matched and updated from standardized JSON.")
+    data_no_ns = strip_ns(data)
+    root_key = list(data_no_ns.keys())[0]
+    print(f"Root key is: {root_key}")
+
+    data_no_ns[root_key]["@xmlns"] = "http://schemas.microsoft.com/office/visio/2012/main"
+    data_no_ns[root_key]["@xmlns:r"] = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+    # Optionally: data_no_ns[root_key]["@xml:space"] = "preserve"  # Only if you really need it
+
+    xml_str = xmltodict.unparse(
+        data_no_ns,
+        pretty=True,
+        full_document=True,
+        encoding="utf-8"
+    )
+
+    os.makedirs(os.path.dirname(OUTPUT_XML), exist_ok=True)
+    with open(OUTPUT_XML, "w", encoding="utf-8") as f:
+        f.write(xml_str)
+
+    print(f"Wrote updated XML to {OUTPUT_XML}")
+
+if __name__ == "__main__":
+    main()
