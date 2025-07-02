@@ -9,14 +9,12 @@ NS = {
 ET.register_namespace('', NS['visio'])  # Needed for pretty output
 
 def set_attributes(elem, attr_dict):
-    # Overwrite all attributes
     for k in list(elem.attrib.keys()):
         del elem.attrib[k]
     for k, v in attr_dict.items():
         elem.set(k, v)
 
 def recreate_cells(parent_elem, cells):
-    # Remove all existing <Cell> and add new ones
     for cell in list(parent_elem.findall('visio:Cell', NS)):
         parent_elem.remove(cell)
     for cell in cells:
@@ -26,7 +24,6 @@ def recreate_cells(parent_elem, cells):
         parent_elem.append(cell_elem)
 
 def recreate_rows(section_elem, rows):
-    # Remove all existing <Row> and add new ones
     for row in list(section_elem.findall('visio:Row', NS)):
         section_elem.remove(row)
     for row in rows:
@@ -39,7 +36,6 @@ def recreate_rows(section_elem, rows):
         section_elem.append(row_elem)
 
 def recreate_sections(shape_elem, sections):
-    # Remove all existing <Section> and add new ones
     for section in list(shape_elem.findall('visio:Section', NS)):
         shape_elem.remove(section)
     for sec in sections:
@@ -52,67 +48,63 @@ def recreate_sections(shape_elem, sections):
         shape_elem.append(sec_elem)
 
 def recreate_text(shape_elem, text_xml):
-    # Remove all existing <Text>
     for text_elem in list(shape_elem.findall('visio:Text', NS)):
         shape_elem.remove(text_elem)
     if text_xml:
-        # text_xml is a string, so parse and append as XML
         try:
             text_elem = ET.fromstring(text_xml)
             shape_elem.append(text_elem)
         except Exception:
-            # fallback to plain text if not well-formed XML
             text_elem = ET.Element('{%s}Text' % NS['visio'])
             text_elem.text = text_xml
             shape_elem.append(text_elem)
 
-def update_shape(shape_elem, jshape):
+def update_shape_with_theme(shape_elem, jshape):
     set_attributes(shape_elem, jshape['attributes'])
     recreate_cells(shape_elem, jshape['Cells'])
     recreate_sections(shape_elem, jshape['Sections'])
     recreate_text(shape_elem, jshape['Text'])
 
+def update_colors(root, jcolors):
+    colors_elem = root.find('visio:Colors', NS)
+    if colors_elem is not None:
+        for color_entry in list(colors_elem.findall('visio:ColorEntry', NS)):
+            colors_elem.remove(color_entry)
+        for jcolor in jcolors:
+            color_elem = ET.Element('{%s}ColorEntry' % NS['visio'])
+            color_elem.set('IX', str(jcolor['IX']))
+            color_elem.set('RGB', jcolor['RGB'])
+            colors_elem.append(color_elem)
+
 def main():
-    # --- Load edited JSON ---
+    # Load edited JSON
     with open("page1_standardized.json", "r", encoding="utf-8") as f:
         edited_json = json.load(f)
 
-    # --- Load original XML ---
+    # Update page1.xml
     page1_xml_path = os.path.join("output_xml", "visio", "pages", "page1.xml")
     tree = ET.parse(page1_xml_path)
     root = tree.getroot()
 
-    # --- Update shapes ---
     shapes_elem = root.find('visio:Shapes', NS)
     if shapes_elem is not None:
-        # Build a map for quick lookup
-        xml_shape_map = {s.get('ID'): s for s in shapes_elem.findall('visio:Shape', NS)}
         for jshape in edited_json['shapes']:
             shape_id = jshape['attributes']['ID']
-            xml_shape = xml_shape_map.get(shape_id)
+            xml_shape = shapes_elem.find(f'visio:Shape[@ID="{shape_id}"]', NS)
             if xml_shape is not None:
-                update_shape(xml_shape, jshape)
-            else:
-                # Optionally: create new shapes if they exist in JSON but not in XML
-                pass
+                update_shape_with_theme(xml_shape, jshape)
 
-    # --- Update connectors ---
-    connects_elem = root.find('visio:Connects', NS)
-    if connects_elem is not None:
-        # Remove all existing <Connect>
-        for conn in list(connects_elem.findall('visio:Connect', NS)):
-            connects_elem.remove(conn)
-        # Add new ones from JSON
-        for jconn in edited_json.get('connectors', []):
-            conn_elem = ET.Element('{%s}Connect' % NS['visio'])
-            for k, v in jconn.items():
-                conn_elem.set(k, v)
-            connects_elem.append(conn_elem)
+    tree.write(page1_xml_path, encoding="utf-8", xml_declaration=True)
+    print(f"Updated XML saved to {page1_xml_path}")
 
-    # --- Save updated XML ---
-    out_path = os.path.join("output_xml", "visio", "pages", "page1.xml")
-    tree.write(out_path, encoding="utf-8", xml_declaration=True)
-    print(f"Updated XML saved to {out_path}")
+    # Update document.xml with color information
+    document_xml_path = os.path.join("output_xml", "visio", "document.xml")
+    document_tree = ET.parse(document_xml_path)
+    document_root = document_tree.getroot()
+    update_colors(document_root, edited_json.get('colors', []))
+
+    document_tree.write(document_xml_path, encoding="utf-8", xml_declaration=True)
+    print(f"Updated XML saved to {document_xml_path}")
 
 if __name__ == "__main__":
     main()

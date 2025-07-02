@@ -17,7 +17,7 @@ OUTPUT_JSON_PATH = "page1_standardized.json"  # <--- Output path
 
 # --- 3. Define your editing task here! ---
 editing_task = (
-    "First, please bold the text in every shape. Second, change all connector lines to dashed style"
+    "Standardize the diagram and make it look more professional. If you need to, this includes: editing shapes, colors, text and connectors logically."
 )
 
 # --- 4. Build the LLM prompt ---
@@ -33,11 +33,18 @@ Files Being Used:
 - masters.xml: Defines the master shapes (e.g., rectangles, circles, connectors) used in the diagram.
 - page1.xml: Contains the actual diagram content—shapes, their properties, text, and connections.
 - custom.xml: Stores document-level custom properties.
+- document.xml: Contains additional document-level information, including color definitions.
+- theme1.xml: Defines a set of theme colors that can be applied across the diagram.
 
 All this data has been extracted and provided as a single, comprehensive JSON document, preserving the full structure and variable names as in the original Visio XML.
 
+Color Information:
+The diagram includes specific color and theme settings defined in the XML, now represented in the JSON.
+- Colors: {json.dumps(json_data.get('colors', []), indent=2)}
+- Theme Colors: {json.dumps(json_data.get('theme_colors', {}), indent=2)}
+
 Purpose of the Task:
-Your job is to understand the structure of this Visio diagram as represented in the JSON, and to make a specific edit as described below.
+Your job is to understand the structure of this Visio diagram as represented in the JSON, and to make specific edits as described below.
 
 Editing Task (as described by a non-technical user):
 {editing_task}
@@ -48,7 +55,7 @@ Instructions & Constraints:
 - Map the user’s plain-language request to the correct modification(s) in the JSON structure, using your knowledge of Visio XML and JSON conventions.
 - When performing the edit, maintain the integrity and structure of the JSON—do not remove, rename, or break any fields not directly related to the change.
 - Ensure that your change is consistent with the existing schema; for example, use the same style for cell values, sections, or attributes as already present.
-- Do not invent new fields or structures unless explicitly instructed; all modifications should be schema-compliant and minimal.
+- When changing colors, use the color references provided in the colors and theme_colors sections.
 - Output ONLY the full, updated JSON document as your response, with no explanations, markdown, or extra formatting.
 
 Input JSON:
