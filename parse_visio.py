@@ -87,38 +87,22 @@ def parse_colors(document_xml_path):
             colors.append({'IX': ix, 'RGB': rgb})
     return colors
 
-def parse_theme(theme_xml_path):
-    tree = ET.parse(theme_xml_path)
-    root = tree.getroot()
-    color_scheme = root.find('.//a:clrScheme', NS)
-    theme_colors = {}
-    for color in color_scheme:
-        name = color.tag.split('}')[1]  # Extract tag without namespace
-        srgb_elem = color.find('a:srgbClr', NS)
-        if srgb_elem is not None:
-            srgb = srgb_elem.get('val')
-            theme_colors[name] = srgb
-    return theme_colors
-
 def main():
     masters_xml = os.path.join("output_xml", "visio", "masters", "masters.xml")
     page1_xml = os.path.join("output_xml", "visio", "pages", "page1.xml")
     custom_xml = os.path.join("output_xml", "docProps", "custom.xml")
     document_xml = os.path.join("output_xml", "visio", "document.xml")
-    theme_xml = os.path.join("output_xml", "visio", "theme", "theme1.xml")
 
     master_map = parse_masters(masters_xml)
     shapes, connectors = parse_page(page1_xml, master_map)
     custom_props = parse_custom(custom_xml)
     colors = parse_colors(document_xml)
-    theme_colors = parse_theme(theme_xml)
 
     result = {
         "shapes": shapes,
         "connectors": connectors,
         "document_properties": custom_props,
-        "colors": colors,
-        "theme_colors": theme_colors  # Include theme colors in the output
+        "colors": colors
     }
 
     os.makedirs("parse_visio", exist_ok=True)

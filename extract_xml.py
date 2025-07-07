@@ -50,7 +50,7 @@ def main():
     connect_str = os.getenv("AZURE_STORAGE_CONNECTION_STRING")
     source_container_name = "visio-files"
     destination_container_name = "xml-container"
-    specific_vsdx_file = "Test-image.vsdx"
+    specific_vsdx_file = "SLM-DMVOSCI.vsdx"
     output_directory = "output_xml"
     os.makedirs(output_directory, exist_ok=True)
 
