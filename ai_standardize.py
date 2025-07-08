@@ -17,8 +17,9 @@ OUTPUT_JSON_PATH = "page1_standardized.json"  # ← Output path
 
 # — 3. Define your editing task here! —
 editing_task = (
-    "Change the color of all text and every label to black."
-    "Do not alter, remove, or rename any fields related to shape or connector position, size, or coordinates. All elements must remain in their exact original positions and sizes."
+    "Change the color of all text, and labels, including the text inside the dynamic connectors, to black and make them bold."
+    "Change the font of all text and labels, including text inside dynamic connectors, to a uniform size: V='0.1388888888888889'"
+    "Change the color of all connectors, and dynamic connectors in the diagram to blue."
 )
 
 # — Function to process each chunk —
@@ -44,8 +45,8 @@ def process_chunk(json_chunk, editing_task):
             },
             {"role": "user", "content": prompt_instructions}
         ],
-        "temperature": 0.2,
-        "max_tokens": 14000
+        "temperature": 0.0,
+        "max_tokens": 16000
     }
 
     print("Sending request to Azure OpenAI for a chunk...")
