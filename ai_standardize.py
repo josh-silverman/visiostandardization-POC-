@@ -13,16 +13,27 @@ API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")
 
 # — 2. Path to your parsed JSON —
 PARSED_JSON_PATH = "parse_visio/page1_extracted.json"
-OUTPUT_JSON_PATH = "page1_standardized.json"  # ← Output path
+OUTPUT_JSON_PATH = "page1_standardized.json"
 
 # — 3. Define your editing task here! —
 editing_task = (
-    "Change the color of all text, and labels, including the text inside the dynamic connectors, to black and make them bold."
-    "Change the font of all text and labels, including text inside dynamic connectors, to a uniform size: V='0.1388888888888889'"
-    "Change the color of all connectors, and dynamic connectors in the diagram to blue."
+    "For every Section with '@attrs':{'N':'Character'} (including all nested shapes):\n"
+    "- For each Row, remove any Cell where N is 'Font', 'Color', 'Style', or 'Size'.\n"
+    "- Then add: {'N':'Font','V':'Calibri'}, {'N':'Color','V':'#000000'}, {'N':'Style','V':'17'}, {'N':'Size','V':'0.1388888888888889','U':'PT'}.\n"
+    "Apply this to all text, including shape labels and connector text.\n"
+    "For every connector line (including dynamic connectors), in each Section with '@attrs':{'N':'Line'}:\n"
+    "- Remove any Cell where N is 'LineColor' or 'LineWeight'.\n"
+    "- Add a Cell: {'N':'LineColor','V':'#0066FF'}.\n"
+    "- Add a Cell: {'N':'LineWeight','V':'0.01388888888888889','U':'PT}.\n"
+    "For every shape that has a Cell where N is 'Comment' and V is 'Firewall' or 'Server':\n"
+    "- Remove any existing Cell where N is 'FillForegnd', 'Width', or 'Height'.\n"
+    "- Add a Cell: {'N':'FillForegnd','V':'#23b8e9','F':'THEMEVAL(\"FillColor\",1)'}.\n"
+    "- Add a Cell: {'N':'Width','V':'2.0'}.\n"
+    "- Add a Cell: {'N':'Height','V':'3.0'}.\n"
+    "Do not change any other fields or parts of the JSON or XML."
 )
 
-# — Function to process each chunk —
+
 def process_chunk(json_chunk, editing_task):
     prompt_instructions = build_prompt(json_chunk, editing_task)
 
@@ -65,7 +76,6 @@ def process_chunk(json_chunk, editing_task):
         print(updated_json_str)
         return None
 
-# — 4. Build the LLM prompt —
 def build_prompt(json_data, editing_task):
     prompt = f"""
 Background:
@@ -88,7 +98,7 @@ Colors: {json.dumps(json_data.get('colors', []), indent=2)}
 Purpose of the Task:
 - Your task is to understand the structure of this Visio diagram as represented in the JSON, and to make specific edits as described below.
 
-Editing Task (as described by a non-technical user):
+Editing Task:
 {editing_task}
 
 Instructions & Constraints:
@@ -110,21 +120,32 @@ Input JSON:
 with open(PARSED_JSON_PATH, "r", encoding="utf-8") as f:
     json_data = json.load(f)
 
-# — 6. Process the JSON in chunks —
-shapes = json_data.get("shapes", [])
 chunk_size = 5  # Define a manageable chunk size
-updated_shapes = []
 
+# — 6a. Process the "shapes" in chunks —
+shapes = json_data.get("shapes", [])
+updated_shapes = []
 for i in range(0, len(shapes), chunk_size):
     chunk = {"shapes": shapes[i:i + chunk_size]}
     updated_chunk = process_chunk(chunk, editing_task)
     if updated_chunk:
         updated_shapes.extend(updated_chunk.get("shapes", []))
-
-# — 7. Combine and save the updated JSON —
 json_data["shapes"] = updated_shapes
 
+# — 6b. Process the "connectors" in chunks if present —
+if "connectors" in json_data:
+    connectors = json_data.get("connectors", [])
+    updated_connectors = []
+    for i in range(0, len(connectors), chunk_size):
+        chunk = {"connectors": connectors[i:i + chunk_size]}
+        updated_chunk = process_chunk(chunk, editing_task)
+        if updated_chunk:
+            updated_connectors.extend(updated_chunk.get("connectors", []))
+    json_data["connectors"] = updated_connectors
+
+# — 7. Combine and save the updated JSON —
 with open(OUTPUT_JSON_PATH, "w", encoding="utf-8") as outf:
     json.dump(json_data, outf, indent=2)
 
 print(f"\nUpdated JSON saved to: {OUTPUT_JSON_PATH}")
+
