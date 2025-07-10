@@ -19,17 +19,12 @@ OUTPUT_JSON_PATH = "page1_standardized.json"
 editing_task = (
     "For every Section with '@attrs':{'N':'Character'} (including all nested shapes):\n"
     "- For each Row, remove any Cell where N is 'Font', 'Color', 'Style', or 'Size'.\n"
-    "- Then add: {'N':'Font','V':'Calibri'}, {'N':'Color','V':'#000000'}, {'N':'Style','V':'17'}, {'N':'Size','V':'0.1388888888888889','U':'PT'}.\n"
+    "- Then add: {'N':'Font','V':'Calibri'}, {'N':'Color','V':'#000000'}, {'N':'Style','V':'17'}, {'N':'Size','V':'0.10','U':'PT'}.\n"
     "Apply this to all text, including shape labels and connector text.\n"
     "For every connector line (including dynamic connectors), in each Section with '@attrs':{'N':'Line'}:\n"
     "- Remove any Cell where N is 'LineColor' or 'LineWeight'.\n"
     "- Add a Cell: {'N':'LineColor','V':'#0066FF'}.\n"
-    "- Add a Cell: {'N':'LineWeight','V':'0.01388888888888889','U':'PT}.\n"
-    "For every shape that has a Cell where N is 'Comment' and V is 'Firewall' or 'Server':\n"
-    "- Remove any existing Cell where N is 'FillForegnd', 'Width', or 'Height'.\n"
-    "- Add a Cell: {'N':'FillForegnd','V':'#23b8e9','F':'THEMEVAL(\"FillColor\",1)'}.\n"
-    "- Add a Cell: {'N':'Width','V':'2.0'}.\n"
-    "- Add a Cell: {'N':'Height','V':'3.0'}.\n"
+    "- Add a Cell: {'N':'LineWeight','V':'0.01388888888888889','U':'PT'}.\n"
     "Do not change any other fields or parts of the JSON or XML."
 )
 
@@ -105,10 +100,8 @@ Instructions & Constraints:
 - Interpret the editing task as a non-technical user would intend, even if the request is vague or general.
 - Carefully analyze the provided JSON, which directly mirrors the Visio XML structure.
 - Map the user’s plain-language request to the correct modification(s) in the JSON structure, using your knowledge of Visio XML and JSON conventions.
-- When performing the edit, maintain the integrity and structure of the JSON—do not remove, rename, or break any fields not directly related to the change.
 - Ensure that your change is consistent with the existing schema; for example, use the same style for cell values, sections, or attributes as already present.
 - When changing colors, use the color references provided in the colors section.
-- Make sure the updated JSON document contains the same amount of information as the original, with no fields removed or renamed unless explicitly requested. Just the values of the fields should change.
 - Output ONLY the full, updated JSON document as your response, with no explanations, markdown, or extra formatting.
 
 Input JSON:
