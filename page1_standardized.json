@@ -260,7 +260,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -304,7 +304,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />Trunk (IN)\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />Trunk (IN)\n</Text>"
     },
     {
       "attributes": {
@@ -412,7 +412,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -472,7 +472,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\" />"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\" />"
     },
     {
       "attributes": {
@@ -734,7 +734,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -785,7 +785,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />Trunk (IN)\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />Trunk (IN)\n</Text>"
     },
     {
       "attributes": {
@@ -1002,7 +1002,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\">Sync\nCable\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\">Sync\nCable\n</Text>"
     },
     {
       "attributes": {
@@ -1239,7 +1239,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -1290,7 +1290,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\" />"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\" />"
     },
     {
       "attributes": {
@@ -1542,7 +1542,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -1593,7 +1593,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />Trunk\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />Trunk\n</Text>"
     },
     {
       "attributes": {
@@ -1612,6 +1612,14 @@
         {
           "N": "PinY",
           "V": "6.44465144788954"
+        },
+        {
+          "N": "Width",
+          "V": "0.3828125000000018"
+        },
+        {
+          "N": "Height",
+          "V": "0.5468750000000026"
         },
         {
           "N": "LocPinX",
@@ -1668,16 +1676,7 @@
         },
         {
           "N": "FillForegnd",
-          "V": "#23b8e9",
-          "F": "THEMEVAL(\"FillColor\",1)"
-        },
-        {
-          "N": "Width",
-          "V": "2.0"
-        },
-        {
-          "N": "Height",
-          "V": "3.0"
+          "V": "1"
         },
         {
           "N": "FillBkgnd",
@@ -1868,7 +1867,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -1876,7 +1875,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />ESXRI845\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />ESXRI845\n</Text>"
     },
     {
       "attributes": {
@@ -2024,6 +2023,37 @@
         },
         {
           "@attrs": {
+            "N": "Character"
+          },
+          "Rows": [
+            {
+              "@attrs": {
+                "IX": "0"
+              },
+              "Cells": [
+                {
+                  "N": "Font",
+                  "V": "Calibri"
+                },
+                {
+                  "N": "Color",
+                  "V": "#000000"
+                },
+                {
+                  "N": "Style",
+                  "V": "17"
+                },
+                {
+                  "N": "Size",
+                  "V": "0.10",
+                  "U": "PT"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "@attrs": {
             "N": "Geometry",
             "IX": "0"
           },
@@ -2066,7 +2096,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\">Trunk\nUPLINK\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\">Trunk\nUPLINK\n</Text>"
     },
     {
       "attributes": {
@@ -2089,6 +2119,14 @@
           "V": "5.326157179838583"
         },
         {
+          "N": "Width",
+          "V": "0.4130757912378158"
+        },
+        {
+          "N": "Height",
+          "V": "0.6398775410539389"
+        },
+        {
           "N": "LocPinX",
           "V": "0.2065378956189079",
           "F": "Width*0.5"
@@ -2108,16 +2146,7 @@
         },
         {
           "N": "FillForegnd",
-          "V": "#23b8e9",
-          "F": "THEMEVAL(\"FillColor\",1)"
-        },
-        {
-          "N": "Width",
-          "V": "2.0"
-        },
-        {
-          "N": "Height",
-          "V": "3.0"
+          "V": "#e7e4cd"
         },
         {
           "N": "FillBkgnd",
@@ -2372,7 +2401,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -2406,7 +2435,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />SLM-DVMOSCI-F (Pri)\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />SLM-DVMOSCI-F (Pri)\n</Text>"
     },
     {
       "attributes": {
@@ -2429,6 +2458,14 @@
           "V": "4.695025177362569"
         },
         {
+          "N": "Width",
+          "V": "0.4130757912378161"
+        },
+        {
+          "N": "Height",
+          "V": "0.6398775410539395"
+        },
+        {
           "N": "LocPinX",
           "V": "0.2065378956189081",
           "F": "Width*0.5"
@@ -2448,16 +2485,7 @@
         },
         {
           "N": "FillForegnd",
-          "V": "#23b8e9",
-          "F": "THEMEVAL(\"FillColor\",1)"
-        },
-        {
-          "N": "Width",
-          "V": "2.0"
-        },
-        {
-          "N": "Height",
-          "V": "3.0"
+          "V": "#e7e4cd"
         },
         {
           "N": "FillBkgnd",
@@ -2712,7 +2740,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -2746,7 +2774,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" /><ns0:pp IX=\"0\" /><ns0:tp IX=\"0\" />SLM-DVMOSCI-F (Sec)\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" /><pp IX=\"0\" /><tp IX=\"0\" />SLM-DVMOSCI-F (Sec)\n</Text>"
     },
     {
       "attributes": {
@@ -2843,6 +2871,15 @@
           "N": "TxtLocPinY",
           "V": "0.1222469679090712",
           "F": "Inh"
+        },
+        {
+          "N": "LineColor",
+          "V": "#0066FF"
+        },
+        {
+          "N": "LineWeight",
+          "V": "0.01388888888888889",
+          "U": "PT"
         }
       ],
       "Sections": [
@@ -2925,40 +2962,9 @@
               }
             }
           ]
-        },
-        {
-          "@attrs": {
-            "N": "Character"
-          },
-          "Rows": [
-            {
-              "@attrs": {
-                "IX": "0"
-              },
-              "Cells": [
-                {
-                  "N": "Font",
-                  "V": "Calibri"
-                },
-                {
-                  "N": "Color",
-                  "V": "#000000"
-                },
-                {
-                  "N": "Style",
-                  "V": "17"
-                },
-                {
-                  "N": "Size",
-                  "V": "0.1388888888888889",
-                  "U": "PT"
-                }
-              ]
-            }
-          ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\">RC\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\">RC\n</Text>"
     },
     {
       "attributes": {
@@ -3072,7 +3078,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -3168,7 +3174,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />2/0/46\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />2/0/46\n</Text>"
     },
     {
       "attributes": {
@@ -3282,7 +3288,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -3378,7 +3384,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />2/0/47\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />2/0/47\n</Text>"
     },
     {
       "attributes": {
@@ -3489,13 +3495,13 @@
           "F": "Inh"
         },
         {
+          "N": "LineColor",
+          "V": "#0066FF"
+        },
+        {
           "N": "LineWeight",
           "V": "0.01388888888888889",
           "U": "PT"
-        },
-        {
-          "N": "LineColor",
-          "V": "#0066FF"
         }
       ],
       "Sections": [
@@ -3560,7 +3566,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -3616,7 +3622,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />OUT\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />OUT\n</Text>"
     },
     {
       "attributes": {
@@ -3729,13 +3735,13 @@
           "F": "Inh"
         },
         {
+          "N": "LineColor",
+          "V": "#0066FF"
+        },
+        {
           "N": "LineWeight",
           "V": "0.01388888888888889",
           "U": "PT"
-        },
-        {
-          "N": "LineColor",
-          "V": "#0066FF"
         }
       ],
       "Sections": [
@@ -3800,7 +3806,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -3856,7 +3862,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />OUT\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />OUT\n</Text>"
     },
     {
       "attributes": {
@@ -3964,7 +3970,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -4024,7 +4030,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />SLM-DMVOSCI-S1\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />SLM-DMVOSCI-S1\n</Text>"
     },
     {
       "attributes": {
@@ -4138,7 +4144,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -4234,7 +4240,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />1/0/49\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />1/0/49\n</Text>"
     },
     {
       "attributes": {
@@ -4348,7 +4354,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -4444,7 +4450,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />1/0/7\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />1/0/7\n</Text>"
     },
     {
       "attributes": {
@@ -4558,7 +4564,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -4654,7 +4660,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />1/0/1\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />1/0/1\n</Text>"
     },
     {
       "attributes": {
@@ -4768,7 +4774,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -4864,7 +4870,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />1/0/9\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />1/0/9\n</Text>"
     },
     {
       "attributes": {
@@ -4978,7 +4984,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -5074,7 +5080,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />1/0/6\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />1/0/6\n</Text>"
     },
     {
       "attributes": {
@@ -5188,7 +5194,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -5284,7 +5290,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />1/0/8\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />1/0/8\n</Text>"
     },
     {
       "attributes": {
@@ -5306,11 +5312,11 @@
         },
         {
           "N": "Width",
-          "V": "2.0"
+          "V": "2.133786081593533"
         },
         {
           "N": "Height",
-          "V": "3.0"
+          "V": "2.311177895779079"
         },
         {
           "N": "LocPinX",
@@ -5337,11 +5343,6 @@
         {
           "N": "ResizeMode",
           "V": "0"
-        },
-        {
-          "N": "FillForegnd",
-          "V": "#23b8e9",
-          "F": "THEMEVAL(\"FillColor\",1)"
         }
       ],
       "Sections": [
@@ -5369,7 +5370,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -5465,7 +5466,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />VLAN 60 -&gt; VLAN 50\nDMV INMATE\n\nVLAN 61 -&gt; VLAN 51\nDMV SUPERVISOR\n\nVLAN 62 -&gt; VLAN 52\nDMV SERVER\n\nVLAN 63 -&gt; VLAN 53\nDMV TRAINING\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />VLAN 60 -&gt; VLAN 50\nDMV INMATE\n\nVLAN 61 -&gt; VLAN 51\nDMV SUPERVISOR\n\nVLAN 62 -&gt; VLAN 52\nDMV SERVER\n\nVLAN 63 -&gt; VLAN 53\nDMV TRAINING\n</Text>"
     },
     {
       "attributes": {
@@ -5487,11 +5488,11 @@
         },
         {
           "N": "Width",
-          "V": "2.0"
+          "V": "1.0625"
         },
         {
           "N": "Height",
-          "V": "3.0"
+          "V": "0.46875"
         },
         {
           "N": "LocPinX",
@@ -5552,11 +5553,6 @@
         {
           "N": "QuickStyleVariation",
           "V": "3"
-        },
-        {
-          "N": "FillForegnd",
-          "V": "#23b8e9",
-          "F": "THEMEVAL(\"FillColor\",1)"
         }
       ],
       "Sections": [
@@ -5584,7 +5580,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
@@ -5680,7 +5676,7 @@
           ]
         }
       ],
-      "Text": "<ns0:Text xmlns:ns0=\"http://schemas.microsoft.com/office/visio/2012/main\"><ns0:cp IX=\"0\" />VLAN 62 -&gt; Vlan 52\n</ns0:Text>"
+      "Text": "<Text xmlns=\"http://schemas.microsoft.com/office/visio/2012/main\"><cp IX=\"0\" />VLAN 62 -&gt; Vlan 52\n</Text>"
     },
     {
       "attributes": {
@@ -5720,12 +5716,11 @@
         },
         {
           "N": "LineWeight",
-          "V": "0.01388888888888889",
-          "U": "PT"
+          "V": "0.01"
         },
         {
           "N": "LineColor",
-          "V": "#0066FF"
+          "V": "0"
         },
         {
           "N": "LinePattern",
@@ -5986,7 +5981,7 @@
                 },
                 {
                   "N": "Size",
-                  "V": "0.1388888888888889",
+                  "V": "0.10",
                   "U": "PT"
                 }
               ]
