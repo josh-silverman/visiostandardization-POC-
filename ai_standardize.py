@@ -141,4 +141,3 @@ with open(OUTPUT_JSON_PATH, "w", encoding="utf-8") as outf:
     json.dump(json_data, outf, indent=2)
 
 print(f"\nUpdated JSON saved to: {OUTPUT_JSON_PATH}")
-

@@ -4,9 +4,11 @@ import os
 
 # --- Namespaces ---
 NS = {
-    'visio': 'http://schemas.microsoft.com/office/visio/2012/main'
+    'visio': 'http://schemas.microsoft.com/office/visio/2012/main',
+    'r': 'http://schemas.openxmlformats.org/officeDocument/2006/relationships'
 }
 ET.register_namespace('', NS['visio'])  # Needed for pretty output
+ET.register_namespace('r', NS['r'])     # Register r: prefix for relationships
 
 POSITION_FIELDS = {'PinX', 'PinY', 'Width', 'Height'}
 
