@@ -5720,7 +5720,7 @@
         },
         {
           "N": "LineColor",
-          "V": "0"
+          "V": "#0066FF"
         },
         {
           "N": "LinePattern",
@@ -5829,6 +5829,11 @@
         {
           "N": "UseGroupGradient",
           "V": "0"
+        },
+        {
+          "N": "LineWeight",
+          "V": "0.01388888888888889",
+          "U": "PT"
         }
       ],
       "Sections": [
@@ -6150,28 +6155,26 @@
       "ToSheet": "3",
       "ToCell": "PinX",
       "ToPart": "3",
-      "Sections": [
-        {
-          "@attrs": {
-            "N": "Line"
-          },
-          "Rows": [
-            {
-              "Cells": [
-                {
-                  "N": "LineColor",
-                  "V": "#0066FF"
-                },
-                {
-                  "N": "LineWeight",
-                  "V": "0.01388888888888889",
-                  "U": "PT"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "Section": {
+        "@attrs": {
+          "N": "Line"
+        },
+        "Row": [
+          {
+            "Cell": [
+              {
+                "N": "LineColor",
+                "V": "#0066FF"
+              },
+              {
+                "N": "LineWeight",
+                "V": "0.01388888888888889",
+                "U": "PT"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "FromSheet": "42",
@@ -6180,28 +6183,26 @@
       "ToSheet": "4",
       "ToCell": "PinX",
       "ToPart": "3",
-      "Sections": [
-        {
-          "@attrs": {
-            "N": "Line"
-          },
-          "Rows": [
-            {
-              "Cells": [
-                {
-                  "N": "LineColor",
-                  "V": "#0066FF"
-                },
-                {
-                  "N": "LineWeight",
-                  "V": "0.01388888888888889",
-                  "U": "PT"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "Section": {
+        "@attrs": {
+          "N": "Line"
+        },
+        "Row": [
+          {
+            "Cell": [
+              {
+                "N": "LineColor",
+                "V": "#0066FF"
+              },
+              {
+                "N": "LineWeight",
+                "V": "0.01388888888888889",
+                "U": "PT"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "FromSheet": "42",
@@ -6210,28 +6211,26 @@
       "ToSheet": "5",
       "ToCell": "PinX",
       "ToPart": "3",
-      "Sections": [
-        {
-          "@attrs": {
-            "N": "Line"
-          },
-          "Rows": [
-            {
-              "Cells": [
-                {
-                  "N": "LineColor",
-                  "V": "#0066FF"
-                },
-                {
-                  "N": "LineWeight",
-                  "V": "0.01388888888888889",
-                  "U": "PT"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "Section": {
+        "@attrs": {
+          "N": "Line"
+        },
+        "Row": [
+          {
+            "Cell": [
+              {
+                "N": "LineColor",
+                "V": "#0066FF"
+              },
+              {
+                "N": "LineWeight",
+                "V": "0.01388888888888889",
+                "U": "PT"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "FromSheet": "41",
@@ -6240,28 +6239,26 @@
       "ToSheet": "4",
       "ToCell": "PinX",
       "ToPart": "3",
-      "Sections": [
-        {
-          "@attrs": {
-            "N": "Line"
-          },
-          "Rows": [
-            {
-              "Cells": [
-                {
-                  "N": "LineColor",
-                  "V": "#0066FF"
-                },
-                {
-                  "N": "LineWeight",
-                  "V": "0.01388888888888889",
-                  "U": "PT"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "Section": {
+        "@attrs": {
+          "N": "Line"
+        },
+        "Row": [
+          {
+            "Cell": [
+              {
+                "N": "LineColor",
+                "V": "#0066FF"
+              },
+              {
+                "N": "LineWeight",
+                "V": "0.01388888888888889",
+                "U": "PT"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "FromSheet": "37",
@@ -6270,28 +6267,26 @@
       "ToSheet": "4",
       "ToCell": "PinX",
       "ToPart": "3",
-      "Sections": [
-        {
-          "@attrs": {
-            "N": "Line"
-          },
-          "Rows": [
-            {
-              "Cells": [
-                {
-                  "N": "LineColor",
-                  "V": "#0066FF"
-                },
-                {
-                  "N": "LineWeight",
-                  "V": "0.01388888888888889",
-                  "U": "PT"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "Section": {
+        "@attrs": {
+          "N": "Line"
+        },
+        "Row": [
+          {
+            "Cell": [
+              {
+                "N": "LineColor",
+                "V": "#0066FF"
+              },
+              {
+                "N": "LineWeight",
+                "V": "0.01388888888888889",
+                "U": "PT"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "FromSheet": "20",
