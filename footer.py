@@ -112,7 +112,7 @@ replacement = """<Shape ID='36' NameU="Rectangle.36" Name="Rectangle.36" Type="S
 </Row>
 </Section>
 <ForeignData ForeignType="EnhMetaFile" MappingMode="8" ExtentX="230" ExtentY="62">
-<Rel r:id="rId3"/>
+<Rel r:id="rId6"/>
 </ForeignData>
 </Shape><Shape ID="58" NameU="Label - Large.38" Name="Label - Large.38" Type="Shape">
 <Cell N="PinX" V="4.1911023433"/>
@@ -2030,3 +2030,18 @@ new_xml_content = pattern.sub(r"\1\n" + replacement + r"\3", xml_content)
 # Write back out
 with open('output_xml/visio/pages/page1.xml', 'w', encoding='utf-8') as f:
     f.write(new_xml_content)
+
+# --- PART 2: Insert the new Relationship in page1.xml.rels ---
+rels_file = "output_xml/visio/pages/_rels/page1.xml.rels"
+relationship_code = '<Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image59.emf"/>'
+
+with open(rels_file, 'r', encoding='utf-8') as f:
+    rels_content = f.read()
+
+if relationship_code not in rels_content:
+    rels_content = rels_content.replace(
+        '</Relationships>',
+        relationship_code + '\n</Relationships>'
+    )
+    with open(rels_file, 'w', encoding='utf-8') as f:
+        f.write(rels_content)
