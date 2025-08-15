@@ -1,11 +1,6 @@
-import re
-
-# Read in the original XML as a string
-with open("output_xml/visio/pages/page1.xml", 'r', encoding='utf-8') as f:
-    xml_content = f.read()
 
 # Your replacement block (put your new shapes here)
-replacement = """<Shape ID='36' NameU="Rectangle.36" Name="Rectangle.36" Type="Shape">
+FOOTER_XML = """<Shape ID="99" NameU="Rectangle.36" Name="Rectangle.36" Type="Shape">
 <Cell N="PinX" V="1.03799"/>
 <Cell N="PinY" V=".257579"/>
 <Cell N="Width" V="2.07598"/>
@@ -60,7 +55,7 @@ replacement = """<Shape ID='36' NameU="Rectangle.36" Name="Rectangle.36" Type="S
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="57" Type="Foreign" LineStyle="2" FillStyle="2" TextStyle="2">
+</Shape><Shape ID="100" Type="Foreign" LineStyle="2" FillStyle="2" TextStyle="2">
 <Cell N="PinX" V="0.4676010632475827"/>
 <Cell N="PinY" V="0.257183733016547"/>
 <Cell N="Width" V="0.8003983643567602"/>
@@ -114,7 +109,7 @@ replacement = """<Shape ID='36' NameU="Rectangle.36" Name="Rectangle.36" Type="S
 <ForeignData ForeignType="EnhMetaFile" MappingMode="8" ExtentX="230" ExtentY="62">
 <Rel r:id="rId6"/>
 </ForeignData>
-</Shape><Shape ID="58" NameU="Label - Large.38" Name="Label - Large.38" Type="Shape">
+</Shape><Shape ID="101" NameU="Label - Large.38" Name="Label - Large.38" Type="Shape">
 <Cell N="PinX" V="4.1911023433"/>
 <Cell N="PinY" V="0.4164818687"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -138,7 +133,7 @@ replacement = """<Shape ID='36' NameU="Rectangle.36" Name="Rectangle.36" Type="S
 <pp IX="0"/>
 Jason Appah
 </Text>
-</Shape><Shape ID="80" NameU="Label - Large.79" IsCustomNameU="1" Name="Label - Large.79" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="102" NameU="Label - Large.79" IsCustomNameU="1" Name="Label - Large.79" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="2.682598049602367"/>
 <Cell N="PinY" V="0.4164818687"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -162,7 +157,7 @@ Jason Appah
 <pp IX="0"/>
 DMV at OSCI
 </Text>
-</Shape><Shape ID="70" NameU="Label - Large.69" IsCustomNameU="1" Name="Label - Large.69" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="103" NameU="Label - Large.69" IsCustomNameU="1" Name="Label - Large.69" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="5.021446075986751"/>
 <Cell N="PinY" V="0.3958518687"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -185,7 +180,7 @@ DMV at OSCI
 <pp IX="0"/>
 June 19, 2018
 </Text>
-</Shape><Shape ID="76" NameU="Label - Large.75" IsCustomNameU="1" Name="Label - Large.75" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="104" NameU="Label - Large.75" IsCustomNameU="1" Name="Label - Large.75" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="5.688725480752668"/>
 <Cell N="PinY" V="0.4164818687"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -209,7 +204,7 @@ June 19, 2018
 <pp IX="0"/>
 EIS Staff Only
 </Text>
-</Shape><Shape ID="91" NameU="Label - Large.90" IsCustomNameU="1" Name="Label - Large.90" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="105" NameU="Label - Large.90" IsCustomNameU="1" Name="Label - Large.90" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="6.578431381989317"/>
 <Cell N="PinY" V="0.4654818687"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -235,7 +230,7 @@ EIS Staff Only
 <pp IX="0"/>
 LEVEL 3 - RESTRICTED
 </Text>
-</Shape><Shape ID="96" NameU="Label - Large.95" IsCustomNameU="1" Name="Label - Large.95" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="106" NameU="Label - Large.95" IsCustomNameU="1" Name="Label - Large.95" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="9.011642170871897"/>
 <Cell N="PinY" V="0.2694818687"/>
 <Cell N="Width" V="3.976715641001306"/>
@@ -323,7 +318,7 @@ WORK IN PROGRESS!!! NOT A FINAL VERSION.
 <cp IX="2"/>
 <cp IX="3"/>
 </Text>
-</Shape><Shape ID="84" NameU="Label - Large.83" IsCustomNameU="1" Name="Label - Large.83" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="107" NameU="Label - Large.83" IsCustomNameU="1" Name="Label - Large.83" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="2.682598049602367"/>
 <Cell N="PinY" V="0.1566893870168448"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -347,7 +342,7 @@ WORK IN PROGRESS!!! NOT A FINAL VERSION.
 <pp IX="0"/>
 V3.1
 </Text>
-</Shape><Shape ID="87" NameU="Label - Large.86" IsCustomNameU="1" Name="Label - Large.86" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="108" NameU="Label - Large.86" IsCustomNameU="1" Name="Label - Large.86" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="3.188112745975885"/>
 <Cell N="PinY" V="0.206983870168448"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -414,7 +409,7 @@ V3.1
 <pp IX='0'/>
 Kelly McDwell
 </Text>
-</Shape><Shape ID="72" NameU="Label - Large.52" Name="Label - Large.52" Type="Shape">
+</Shape><Shape ID="109" NameU="Label - Large.52" Name="Label - Large.52" Type="Shape">
 <Cell N="PinX" V="5.021446075986751"/>
 <Cell N="PinY" V="0.1386893870168448"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -437,7 +432,7 @@ Kelly McDwell
 <pp IX="0"/>
 June 18, 2025
 </Text>
-</Shape><Shape ID="78" NameU="Label - Large.77" IsCustomNameU="1" Name="Label - Large.77" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="110" NameU="Label - Large.77" IsCustomNameU="1" Name="Label - Large.77" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="5.46629898837063"/>
 <Cell N="PinY" V="0.1566893870168448"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -461,7 +456,7 @@ June 18, 2025
 <pp IX="0"/>
 ???
 </Text>
-</Shape><Shape ID="93" NameU="Label - Large.92" IsCustomNameU="1" Name="Label - Large.92" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="111" NameU="Label - Large.92" IsCustomNameU="1" Name="Label - Large.92" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="6.356004889607279"/>
 <Cell N="PinY" V="0.2096893870168448"/>
 <Cell N="Height" V="0.0644015935"/>
@@ -487,7 +482,7 @@ June 18, 2025
 <pp IX="0"/>
 RED+STRICT
 </Text>
-</Shape><Shape ID="59" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="112" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="0.3572304700529927"/>
 <Cell N="PinY" V="0.5569545386223904"/>
 <Cell N="Width" V="1.71"/>
@@ -551,7 +546,7 @@ RED+STRICT
 <pp IX="0"/>
 DEPARTMENT/DIVISION
 </Text>
-</Shape><Shape ID="82" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="113" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="2.433210788522837"/>
 <Cell N="PinY" V="0.5569545386223904"/>
 <Cell N="Width" V="1.71"/>
@@ -615,7 +610,7 @@ DEPARTMENT/DIVISION
 <pp IX="0"/>
 PROJECT/NETWORK NAME
 </Text>
-</Shape><Shape ID="64" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="114" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="3.943014711847361"/>
 <Cell N="PinY" V="0.5569545386223904"/>
 <Cell N="Width" V="1.71"/>
@@ -679,7 +674,7 @@ PROJECT/NETWORK NAME
 <pp IX="0"/>
 AUTHOR/OWNER
 </Text>
-</Shape><Shape ID="71" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="115" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="5.021446075986751"/>
 <Cell N="PinY" V="0.5279545386223904"/>
 <Cell N="Width" V="0.44852947576917"/>
@@ -741,7 +736,7 @@ AUTHOR/OWNER
 <cp IX="0"/>
 DATE CREATED
 </Text>
-</Shape><Shape ID="77" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="116" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="5.46629898837063"/>
 <Cell N="PinY" V="0.5569545386223904"/>
 <Cell N="Width" V="1.71"/>
@@ -805,7 +800,7 @@ DATE CREATED
 <pp IX="0"/>
 AUDIENCE
 </Text>
-</Shape><Shape ID="92" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="117" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="6.356004889607279"/>
 <Cell N="PinY" V="0.5569545386223904"/>
 <Cell N="Width" V="1.71"/>
@@ -869,7 +864,7 @@ AUDIENCE
 <pp IX="0"/>
 CLASSIFICATION
 </Text>
-</Shape><Shape ID="97" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="118" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="7.245710801917533"/>
 <Cell N="PinY" V="0.5569545386223904"/>
 <Cell N="Width" V="1.71"/>
@@ -933,7 +928,7 @@ CLASSIFICATION
 <pp IX="0"/>
 NOTES
 </Text>
-</Shape><Shape ID="85" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="119" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="2.433210788522837"/>
 <Cell N="PinY" V=".2892999"/>
 <Cell N="Width" V="1.71"/>
@@ -997,7 +992,7 @@ NOTES
 <pp IX="0"/>
 VERSION
 </Text>
-</Shape><Shape ID="88" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="120" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="3.188112745975885"/>
 <Cell N="PinY" V=".2892999"/>
 <Cell N="Width" V="1.71"/>
@@ -1061,7 +1056,7 @@ VERSION
 <pp IX="0"/>
 EFFECTIVE DATE
 </Text>
-</Shape><Shape ID="67" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="121" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="3.943014711847361"/>
 <Cell N="PinY" V=".2892999"/>
 <Cell N="Width" V="1.71"/>
@@ -1125,7 +1120,7 @@ EFFECTIVE DATE
 <pp IX="0"/>
 PEER REVIEWER
 </Text>
-</Shape><Shape ID="73" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="122" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="5.021446075986751"/>
 <Cell N="PinY" V="0.2612399"/>
 <Cell N="Width" V="0.44852947576917"/>
@@ -1182,7 +1177,7 @@ PEER REVIEWER
 <cp IX="0"/>
 DATE REVIEWED
 </Text>
-</Shape><Shape ID="79" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="123" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="5.46629898837063"/>
 <Cell N="PinY" V="0.2892999"/>
 <Cell N="Width" V="1.71"/>
@@ -1246,7 +1241,7 @@ DATE REVIEWED
 <pp IX="0"/>
 CATALOG
 </Text>
-</Shape><Shape ID="94" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
+</Shape><Shape ID="124" Type="Shape" LineStyle="1" FillStyle="1" TextStyle="3">
 <Cell N="PinX" V="6.356004889607279"/>
 <Cell N="PinY" V="0.2892999"/>
 <Cell N="Width" V="1.71"/>
@@ -1310,7 +1305,7 @@ CATALOG
 <pp IX="0"/>
 TLP
 </Text>
-</Shape><Shape ID="60" Type="Group" LineStyle="3" FillStyle="3" TextStyle="3">
+</Shape><Shape ID="125" Type="Group" LineStyle="3" FillStyle="3" TextStyle="3">
 <Cell N="PinX" V="1.467700580965162"/>
 <Cell N="PinY" V="0.2592542482347063"/>
 <Cell N="Width" V="0.9739124891434765"/>
@@ -1323,7 +1318,7 @@ TLP
 <Cell N="ResizeMode" V="0"/>
 <Cell N="QuickStyleVariation" V="2"/>
 <Shapes>
-<Shape ID="61" NameU="CSS" Name="CSS" Type="Foreign">
+<Shape ID="126" NameU="CSS" Name="CSS" Type="Foreign">
 <Cell N="PinX" V="0.214738876463707" F="Sheet.40!Width*0.2204909361544"/>
 <Cell N="PinY" V="0.1593063454786586" F="Sheet.40!Height*0.5"/>
 <Cell N="Width" V="0.429477752927414" F="Sheet.40!Width*0.4409818723088"/>
@@ -1339,7 +1334,7 @@ TLP
 <Cell N="TxtWidth" V="0.429477752927414" F="Inh"/>
 <Cell N="TxtLocPinX" V="0.214738876463707" F="Inh"/>
 </Shape>
-<Shape ID="62" NameU="NSO" Name="NSO" Type="Foreign">
+<Shape ID="127" NameU="NSO" Name="NSO" Type="Foreign">
 <Cell N="PinX" V="0.7260951493861183" F="Sheet.40!Width*0.74554455095313"/>
 <Cell N="PinY" V="0.1580111719381806" F="Sheet.40!Height*0.49593495934959"/>
 <Cell N="Width" V="0.4956346795147164" F="Sheet.40!Width*0.50891089809374"/>
@@ -1356,7 +1351,7 @@ TLP
 <Cell N="TxtLocPinX" V="0.2478173397573582" F="Inh"/>
 </Shape>
 </Shapes>
-</Shape><Shape ID="63" NameU="Rectangle.62" IsCustomNameU="1" Name="Rectangle.62" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="128" NameU="Rectangle.62" IsCustomNameU="1" Name="Rectangle.62" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="4.192401956957449"/>
 <Cell N="PinY" V="0.3863636364807163"/>
 <Cell N="Width" V="1.213235300123615"/>
@@ -1411,7 +1406,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="65" NameU="Rectangle.64" IsCustomNameU="1" Name="Rectangle.64" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="129" NameU="Rectangle.64" IsCustomNameU="1" Name="Rectangle.64" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="4.192401954546967"/>
 <Cell N="PinY" V="0.1287878788269054"/>
 <Cell N="Width" V="1.213235295302653"/>
@@ -1466,7 +1461,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="68" NameU="Rectangle.67" IsCustomNameU="1" Name="Rectangle.67" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="130" NameU="Rectangle.67" IsCustomNameU="1" Name="Rectangle.67" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="5.021446072507988"/>
 <Cell N="PinY" V="0.3863636364807163"/>
 <Cell N="Width" V="0.4448529545344422"/>
@@ -1521,7 +1516,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="69" NameU="Rectangle.68" IsCustomNameU="1" Name="Rectangle.68" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="131" NameU="Rectangle.68" IsCustomNameU="1" Name="Rectangle.68" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="5.021446072507988"/>
 <Cell N="PinY" V="0.1287878788269054"/>
 <Cell N="Width" V="0.4448529545344418"/>
@@ -1576,7 +1571,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="74" NameU="Rectangle.73" IsCustomNameU="1" Name="Rectangle.73" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="132" NameU="Rectangle.73" IsCustomNameU="1" Name="Rectangle.73" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="5.688725466152819"/>
 <Cell N="PinY" V="0.3863636364807163"/>
 <Cell N="Width" V="0.8897059170563476"/>
@@ -1631,7 +1626,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="75" NameU="Rectangle.74" IsCustomNameU="1" Name="Rectangle.74" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="133" NameU="Rectangle.74" IsCustomNameU="1" Name="Rectangle.74" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="5.688725466152819"/>
 <Cell N="PinY" V="0.1287878788269054"/>
 <Cell N="Width" V="0.8897059170563476"/>
@@ -1686,7 +1681,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="81" NameU="Rectangle.80" IsCustomNameU="1" Name="Rectangle.80" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="134" NameU="Rectangle.80" IsCustomNameU="1" Name="Rectangle.80" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="2.830882348849101"/>
 <Cell N="PinY" V="0.3863636364807163"/>
 <Cell N="Width" V="1.50980393055597"/>
@@ -1741,7 +1736,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="83" NameU="Rectangle.63" Name="Rectangle.63" Type="Shape">
+</Shape><Shape ID="135" NameU="Rectangle.63" Name="Rectangle.63" Type="Shape">
 <Cell N="PinX" V="3.208333325031837"/>
 <Cell N="PinY" V="0.1287878788269054"/>
 <Cell N="Width" V="0.7549019652779852"/>
@@ -1796,7 +1791,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="86" NameU="Rectangle.85" IsCustomNameU="1" Name="Rectangle.85" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="136" NameU="Rectangle.85" IsCustomNameU="1" Name="Rectangle.85" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="2.453431346841338"/>
 <Cell N="PinY" V="0.1287878788269054"/>
 <Cell N="Width" V="0.7549019652779852"/>
@@ -1851,7 +1846,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="89" NameU="Rectangle.88" IsCustomNameU="1" Name="Rectangle.88" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="137" NameU="Rectangle.88" IsCustomNameU="1" Name="Rectangle.88" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="6.578431367389466"/>
 <Cell N="PinY" V="0.3863636364807163"/>
 <Cell N="Width" V="0.8897059170563476"/>
@@ -1906,7 +1901,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="90" NameU="Rectangle.89" IsCustomNameU="1" Name="Rectangle.89" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="138" NameU="Rectangle.89" IsCustomNameU="1" Name="Rectangle.89" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="6.578431367389466"/>
 <Cell N="PinY" V="0.1287878788269054"/>
 <Cell N="Width" V="0.8897059170563476"/>
@@ -1961,7 +1956,7 @@ TLP
 <Cell N="Y" V="0" F="Inh"/>
 </Row>
 </Section>
-</Shape><Shape ID="95" NameU="Rectangle.94" IsCustomNameU="1" Name="Rectangle.94" IsCustomName="1" Type="Shape">
+</Shape><Shape ID="139" NameU="Rectangle.94" IsCustomNameU="1" Name="Rectangle.94" IsCustomName="1" Type="Shape">
 <Cell N="PinX" V="9.01164204378289"/>
 <Cell N="PinY" V="0.2575757576538108"/>
 <Cell N="Width" V="3.9767154452227"/>
@@ -2018,30 +2013,67 @@ TLP
 </Section>
 </Shape>
 """
-# Pattern: non-greedy match from VLAN 62 block to </Shapes><Connects>
-pattern = re.compile(
-    r"(VLAN 62 -&gt; Vlan 52\s*</Text></Shape>)(.*?)(</Shapes><Connects>)",
-    re.DOTALL
-)
+from lxml import etree
 
-# Replace
-new_xml_content = pattern.sub(r"\1\n" + replacement + r"\3", xml_content)
 
-# Write back out
-with open('output_xml/visio/pages/page1.xml', 'w', encoding='utf-8') as f:
-    f.write(new_xml_content)
+NS = {'v': 'http://schemas.microsoft.com/office/visio/2012/main'}
 
-# --- PART 2: Insert the new Relationship in page1.xml.rels ---
-rels_file = "output_xml/visio/pages/_rels/page1.xml.rels"
-relationship_code = '<Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="../media/image59.emf"/>'
+def update_footer(xml_path, footer_xml=FOOTER_XML):
+    tree = etree.parse(xml_path)
+    root = tree.getroot()
 
-with open(rels_file, 'r', encoding='utf-8') as f:
-    rels_content = f.read()
+    # --- Find all shapes at top level ---
+    shapes_container = root.find('v:Shapes', namespaces=NS)
+    if shapes_container is None:
+        raise Exception("No <Shapes> element found in page XML.")
 
-if relationship_code not in rels_content:
-    rels_content = rels_content.replace(
-        '</Relationships>',
-        relationship_code + '\n</Relationships>'
+    # --- Remove prior footer group by NameU ---
+    for shape in shapes_container.findall('v:Shape', namespaces=NS):
+        if shape.get('NameU', '').strip() == "Title block corporate 1":
+            shapes_container.remove(shape)
+            print("Removed prior footer group: Title block corporate 1")
+            break  # Remove only the first match
+
+    # --- Find the VLAN 62 block (target for insertion) ---
+    target_shape = None
+    target_idx = None
+    for idx, shape in enumerate(shapes_container.findall('v:Shape', namespaces=NS)):
+        text_elem = shape.find('v:Text', namespaces=NS)
+        if text_elem is not None:
+            full_text = ''.join(text_elem.itertext()).replace('\n', '').strip()
+            if "VLAN 62 -> Vlan 52" in full_text or "VLAN 62 -&gt; Vlan 52" in full_text:
+                target_shape = shape
+                target_idx = idx
+                break
+
+    if target_shape is None:
+        print("Could not find the shape. Here are all shape texts:")
+        for shape in shapes_container.findall('v:Shape', namespaces=NS):
+            text_elem = shape.find('v:Text', namespaces=NS)
+            if text_elem is not None:
+                print('----')
+                print(''.join(text_elem.itertext()))
+        raise Exception("Target shape with 'VLAN 62 -> Vlan 52' not found.")
+
+    # --- Parse and insert the new footer shapes ---
+    footer_fragment = etree.fromstring(
+        f'''<Shapes xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+{footer_xml}
+</Shapes>'''
     )
-    with open(rels_file, 'w', encoding='utf-8') as f:
-        f.write(rels_content)
+
+    insert_index = target_idx + 1
+    for new_shape in footer_fragment:
+        shapes_container.insert(insert_index, new_shape)
+        insert_index += 1
+
+    # --- Save the result ---
+    tree.write(xml_path, encoding='utf-8', xml_declaration=True, pretty_print=True)
+    print("Old footer removed and new footer inserted via lxml.")
+
+def main():
+    xml_path = "output_xml/visio/pages/page1.xml"
+    update_footer(xml_path, FOOTER_XML)
+
+if __name__ == "__main__":
+    main()

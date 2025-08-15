@@ -59,7 +59,7 @@
           <Cell N="Style" V="17"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
         </Row>
       </Section>
       <Section N="Geometry" IX="0">
@@ -73,6 +73,20 @@
       </Section>
       <Text><cp IX="0"/>Trunk (IN)
 </Text>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
+        </Row>
+      </Section>
     </Shape>
     <Shape ID="3" NameU="Workgroup Switch (colored).392" Name="Workgroup Switch (colored).392" Type="Foreign" Master="4">
       <Cell N="PinX" V="4.885877858938118"/>
@@ -93,7 +107,7 @@
       <Section N="Character">
         <Row IX="0">
           <Cell N="Style" V="17"/>
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
         </Row>
@@ -111,16 +125,23 @@
         </Row>
       </Section>
       <Text/>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -182,7 +203,7 @@
           <Cell N="Style" V="17"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
         </Row>
       </Section>
       <Section N="Geometry" IX="0">
@@ -197,6 +218,20 @@
       </Section>
       <Text><cp IX="0"/>Trunk (IN)
 </Text>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
+        </Row>
+      </Section>
     </Shape>
     <Shape ID="35" NameU="Dynamic connector" Name="Dynamic connector" Type="Shape" Master="2">
       <Cell N="PinX" V="7.050287895618908" F="Inh"/>
@@ -251,11 +286,25 @@ Cable
         <Row IX="0">
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
           <Cell N="Style" V="17"/>
         </Row>
       </Section>
       <Cell N="FillForegnd" V="#ADD8E6" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
+        </Row>
+      </Section>
     </Shape>
     <Shape ID="37" NameU="Dynamic connector.37" Name="Dynamic connector.37" Type="Shape" Master="2">
       <Cell N="PinX" V="5.012830983938118" F="Inh"/>
@@ -310,7 +359,7 @@ Cable
           <Cell N="Style" V="17"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
         </Row>
       </Section>
       <Section N="Geometry" IX="0">
@@ -324,6 +373,20 @@ Cable
         <Row T="LineTo" IX="3" Del="1"/>
       </Section>
       <Text/>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
+        </Row>
+      </Section>
     </Shape>
     <Shape ID="20" NameU="Dynamic connector.548" Name="Dynamic connector.548" Type="Shape" Master="2">
       <Cell N="PinX" V="4.885877858938118" F="Inh"/>
@@ -381,7 +444,7 @@ Cable
           <Cell N="Style" V="17"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
         </Row>
       </Section>
       <Section N="Geometry" IX="0">
@@ -396,6 +459,20 @@ Cable
       </Section>
       <Text><cp IX="0"/>Trunk
 </Text>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
+        </Row>
+      </Section>
     </Shape>
     <Shape ID="5" NameU="Server.449" Name="Server.449" Type="Group" Master="5">
       <Cell N="PinX" V="4.885877858938118"/>
@@ -459,7 +536,7 @@ Cable
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
         </Row>
@@ -491,7 +568,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -558,6 +635,20 @@ Cable
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="7" Type="Shape" MasterShape="6">
           <Cell N="PinX" V="0.1914062500000009" F="Inh"/>
@@ -591,7 +682,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -630,6 +721,20 @@ Cable
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="8" Type="Shape" MasterShape="7">
           <Cell N="PinX" V="0.07272538073223533" F="Inh"/>
@@ -664,7 +769,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -705,6 +810,20 @@ Cable
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="9" Type="Shape" MasterShape="8">
           <Cell N="PinX" V="0.2640424679487193" F="Inh"/>
@@ -739,7 +858,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -776,6 +895,20 @@ Cable
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="10" Type="Shape" MasterShape="9">
           <Cell N="PinX" V="0.1914062500000009" F="Inh"/>
@@ -806,7 +939,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -853,6 +986,20 @@ Cable
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="11" Type="Shape" MasterShape="10">
           <Cell N="PinX" V="0.06684820832604391" F="Inh"/>
@@ -887,7 +1034,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -910,6 +1057,20 @@ Cable
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -945,7 +1106,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -996,6 +1157,20 @@ Cable
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="13" Type="Group" MasterShape="12">
           <Cell N="PinX" V="0.07242243754094103" F="Inh"/>
@@ -1031,7 +1206,7 @@ Cable
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -1065,7 +1240,7 @@ Cable
                   <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
                   <Cell N="Color" V="#000000"/>
                   <Cell N="Style" V="17"/>
-                  <Cell N="Size" V="0.0500000" U="PT"/>
+                  <Cell N="Size" V="0.075" U="PT"/>
                   <Cell N="AsianFont" V="0"/>
                   <Cell N="ComplexScriptFont" V="0"/>
                 </Row>
@@ -1116,6 +1291,20 @@ Cable
                   <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
                 </Row>
               </Section>
+              <Section N="Prop">
+                <Row N="DeviceName" IX="0">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Location" IX="1">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Notes" IX="2">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="VLAN" IX="3">
+                  <Cell N="Value" V=""/>
+                </Row>
+              </Section>
             </Shape>
             <Shape ID="15" Type="Shape" MasterShape="14">
               <Cell N="PinX" V="0.04631425614708809" F="Inh"/>
@@ -1150,7 +1339,7 @@ Cable
                   <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
                   <Cell N="Color" V="#000000"/>
                   <Cell N="Style" V="17"/>
-                  <Cell N="Size" V="0.0500000" U="PT"/>
+                  <Cell N="Size" V="0.075" U="PT"/>
                   <Cell N="AsianFont" V="0"/>
                   <Cell N="ComplexScriptFont" V="0"/>
                 </Row>
@@ -1181,6 +1370,20 @@ Cable
                 <Row IX="1">
                   <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
                   <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+                </Row>
+              </Section>
+              <Section N="Prop">
+                <Row N="DeviceName" IX="0">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Location" IX="1">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Notes" IX="2">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="VLAN" IX="3">
+                  <Cell N="Value" V=""/>
                 </Row>
               </Section>
             </Shape>
@@ -1217,7 +1420,7 @@ Cable
                   <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
                   <Cell N="Color" V="#000000"/>
                   <Cell N="Style" V="17"/>
-                  <Cell N="Size" V="0.0500000" U="PT"/>
+                  <Cell N="Size" V="0.075" U="PT"/>
                   <Cell N="AsianFont" V="0"/>
                   <Cell N="ComplexScriptFont" V="0"/>
                 </Row>
@@ -1258,6 +1461,20 @@ Cable
                   <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
                 </Row>
               </Section>
+              <Section N="Prop">
+                <Row N="DeviceName" IX="0">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Location" IX="1">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Notes" IX="2">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="VLAN" IX="3">
+                  <Cell N="Value" V=""/>
+                </Row>
+              </Section>
             </Shape>
             <Shape ID="17" Type="Shape" MasterShape="16">
               <Cell N="PinX" V="0.05300480769230806" F="Inh"/>
@@ -1287,7 +1504,7 @@ Cable
                   <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
                   <Cell N="Color" V="#000000"/>
                   <Cell N="Style" V="17"/>
-                  <Cell N="Size" V="0.0500000" U="PT"/>
+                  <Cell N="Size" V="0.075" U="PT"/>
                   <Cell N="AsianFont" V="0"/>
                   <Cell N="ComplexScriptFont" V="0"/>
                 </Row>
@@ -1328,6 +1545,20 @@ Cable
                   <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
                 </Row>
               </Section>
+              <Section N="Prop">
+                <Row N="DeviceName" IX="0">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Location" IX="1">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Notes" IX="2">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="VLAN" IX="3">
+                  <Cell N="Value" V=""/>
+                </Row>
+              </Section>
             </Shape>
             <Shape ID="18" Type="Shape" MasterShape="17">
               <Cell N="PinX" V="0.05300480769230806" F="Inh"/>
@@ -1357,7 +1588,7 @@ Cable
                   <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
                   <Cell N="Color" V="#000000"/>
                   <Cell N="Style" V="17"/>
-                  <Cell N="Size" V="0.0500000" U="PT"/>
+                  <Cell N="Size" V="0.075" U="PT"/>
                   <Cell N="AsianFont" V="0"/>
                   <Cell N="ComplexScriptFont" V="0"/>
                 </Row>
@@ -1386,6 +1617,20 @@ Cable
                 <Row IX="1">
                   <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
                   <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+                </Row>
+              </Section>
+              <Section N="Prop">
+                <Row N="DeviceName" IX="0">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Location" IX="1">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Notes" IX="2">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="VLAN" IX="3">
+                  <Cell N="Value" V=""/>
                 </Row>
               </Section>
             </Shape>
@@ -1422,7 +1667,7 @@ Cable
                   <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
                   <Cell N="Color" V="#000000"/>
                   <Cell N="Style" V="17"/>
-                  <Cell N="Size" V="0.0500000" U="PT"/>
+                  <Cell N="Size" V="0.075" U="PT"/>
                   <Cell N="AsianFont" V="0"/>
                   <Cell N="ComplexScriptFont" V="0"/>
                 </Row>
@@ -1453,6 +1698,20 @@ Cable
                   <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
                 </Row>
               </Section>
+              <Section N="Prop">
+                <Row N="DeviceName" IX="0">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Location" IX="1">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="Notes" IX="2">
+                  <Cell N="Value" V=""/>
+                </Row>
+                <Row N="VLAN" IX="3">
+                  <Cell N="Value" V=""/>
+                </Row>
+              </Section>
             </Shape>
           </Shapes>
           <Section N="FillGradient">
@@ -1465,6 +1724,20 @@ Cable
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
       </Shapes>
       <Section N="FillGradient">
@@ -1475,6 +1748,20 @@ Cable
         <Row IX="1">
           <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
           <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+        </Row>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -1524,11 +1811,25 @@ UPLINK
         <Row IX="0">
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
           <Cell N="Style" V="17"/>
         </Row>
       </Section>
       <Cell N="FillForegnd" V="#ADD8E6" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
+        </Row>
+      </Section>
     </Shape>
     <Shape ID="28" NameU="Firewall.163" IsCustomNameU="1" Name="Firewall.163" IsCustomName="1" Type="Group" Master="6">
       <Cell N="PinX" V="6.84375"/>
@@ -1599,7 +1900,7 @@ UPLINK
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
         </Row>
@@ -1650,7 +1951,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -1685,6 +1986,20 @@ UPLINK
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -1730,7 +2045,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -1765,6 +2080,20 @@ UPLINK
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -1811,7 +2140,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -1846,6 +2175,20 @@ UPLINK
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -1892,7 +2235,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -2049,6 +2392,20 @@ UPLINK
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="33" Type="Shape" MasterShape="8">
           <Cell N="PinX" V="0.2065378956189079" F="Inh"/>
@@ -2084,7 +2441,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -2129,6 +2486,20 @@ UPLINK
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
       </Shapes>
       <Section N="FillGradient">
@@ -2139,6 +2510,20 @@ UPLINK
         <Row IX="1">
           <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
           <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+        </Row>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -2211,7 +2596,7 @@ UPLINK
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
         </Row>
@@ -2262,7 +2647,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -2297,6 +2682,20 @@ UPLINK
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -2342,7 +2741,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -2377,6 +2776,20 @@ UPLINK
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -2423,7 +2836,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -2458,6 +2871,20 @@ UPLINK
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -2504,7 +2931,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -2661,6 +3088,20 @@ UPLINK
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="27" Type="Shape" MasterShape="8">
           <Cell N="PinX" V="0.2065378956189081" F="Inh"/>
@@ -2696,7 +3137,7 @@ UPLINK
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -2741,6 +3182,20 @@ UPLINK
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
       </Shapes>
       <Section N="FillGradient">
@@ -2751,6 +3206,20 @@ UPLINK
         <Row IX="1">
           <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
           <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+        </Row>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -2798,20 +3267,27 @@ UPLINK
         <Row IX="0">
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
           <Cell N="Style" V="17"/>
         </Row>
       </Section>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -2835,7 +3311,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -2870,16 +3346,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>2/0/46
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -2903,7 +3386,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -2938,16 +3421,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>2/0/47
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -2985,7 +3475,7 @@ UPLINK
       <Section N="Character">
         <Row IX="0">
           <Cell N="Style" V="17"/>
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
         </Row>
@@ -3004,16 +3494,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>OUT
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3051,7 +3548,7 @@ UPLINK
       <Section N="Character">
         <Row IX="0">
           <Cell N="Style" V="17"/>
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
         </Row>
@@ -3071,6 +3568,20 @@ UPLINK
       <Text><cp IX="0"/>OUT
 </Text>
       <Cell N="FillForegnd" V="#ADD8E6" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
+        </Row>
+      </Section>
     </Shape>
     <Shape ID="4" NameU="Workgroup Switch (colored).393" Name="Workgroup Switch (colored).393" Type="Foreign" Master="4">
       <Cell N="PinX" V="4.885877858938118"/>
@@ -3091,7 +3602,7 @@ UPLINK
       <Section N="Character">
         <Row IX="0">
           <Cell N="Style" V="17"/>
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
         </Row>
@@ -3110,16 +3621,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>SLM-DMVOSCI-S1
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3143,7 +3661,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -3178,16 +3696,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>1/0/49
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3211,7 +3736,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -3246,16 +3771,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>1/0/7
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3279,7 +3811,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -3314,16 +3846,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>1/0/1
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3347,7 +3886,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -3382,16 +3921,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>1/0/9
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3415,7 +3961,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -3450,16 +3996,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>1/0/6
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3483,7 +4036,7 @@ UPLINK
       <Cell N="QuickStyleVariation" V="3"/>
       <Section N="Character">
         <Row IX="0">
-          <Cell N="Size" V="0.0500000" U="PT"/>
+          <Cell N="Size" V="0.075" U="PT"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
           <Cell N="Color" V="#000000"/>
           <Cell N="Style" V="17"/>
@@ -3518,16 +4071,23 @@ UPLINK
       </Section>
       <Text><cp IX="0"/>1/0/8
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3547,7 +4107,7 @@ UPLINK
           <Cell N="Color" V="#000000" F="THEMEGUARD(RGB(255,0,0))"/>
           <Cell N="Style" V="17"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
         </Row>
       </Section>
       <Section N="Geometry" IX="0">
@@ -3589,16 +4149,23 @@ DMV SERVER
 VLAN 63 -&gt; VLAN 53
 DMV TRAINING
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3625,7 +4192,7 @@ DMV TRAINING
           <Cell N="Color" V="#000000" F="THEMEGUARD(RGB(255,0,0))"/>
           <Cell N="Style" V="17"/>
           <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
         </Row>
       </Section>
       <Section N="Geometry" IX="0">
@@ -3657,16 +4224,23 @@ DMV TRAINING
       </Section>
       <Text><cp IX="0"/>VLAN 62 -&gt; Vlan 52
 </Text>
-      <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-      <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
-      <Section N="FillGradient">
+      <Section N="Paragraph">
         <Row IX="0">
-          <Cell N="GradientStopColor" V="#e7e4cd"/>
-          <Cell N="GradientStopColorTrans" V="0"/>
+          <Cell N="Align" V="1"/>
         </Row>
-        <Row IX="1">
-          <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-          <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
@@ -3720,7 +4294,7 @@ DMV TRAINING
           <Cell N="Style" V="17"/>
           <Cell N="AsianFont" V="0"/>
           <Cell N="ComplexScriptFont" V="0"/>
-          <Cell N="Size" U="PT" V="0.0500000"/>
+          <Cell N="Size" U="PT" V="0.075"/>
         </Row>
       </Section>
       <Shapes>
@@ -3770,7 +4344,7 @@ DMV TRAINING
               <Cell N="Style" V="17"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
-              <Cell N="Size" U="PT" V="0.0500000"/>
+              <Cell N="Size" U="PT" V="0.075"/>
             </Row>
           </Section>
           <Section N="Geometry" IX="0">
@@ -3813,6 +4387,20 @@ DMV TRAINING
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="60" Type="Shape" MasterShape="7">
           <Cell N="PinX" V="4.96875" F="Inh"/>
@@ -3821,8 +4409,6 @@ DMV TRAINING
           <Cell N="Height" V="0.3875" F="Inh"/>
           <Cell N="LocPinX" V="4.96875" F="Inh"/>
           <Cell N="LocPinY" V="0.3875" F="Inh"/>
-          <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-          <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
           <Cell N="FillPattern" V="36"/>
           <Cell N="ShdwForegnd" V="0"/>
           <Cell N="ShdwPattern" V="0"/>
@@ -3862,7 +4448,7 @@ DMV TRAINING
               <Cell N="Style" V="17"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
-              <Cell N="Size" U="PT" V="0.0500000"/>
+              <Cell N="Size" U="PT" V="0.075"/>
             </Row>
           </Section>
           <Section N="Geometry" IX="0">
@@ -3897,14 +4483,23 @@ DMV TRAINING
           <Text>
             <cp IX="0"/>
           </Text>
-          <Section N="FillGradient">
+          <Section N="Paragraph">
             <Row IX="0">
-              <Cell N="GradientStopColor" V="#e7e4cd"/>
-              <Cell N="GradientStopColorTrans" V="0"/>
+              <Cell N="Align" V="1"/>
             </Row>
-            <Row IX="1">
-              <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-              <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -3953,7 +4548,7 @@ DMV TRAINING
               <Cell N="Style" V="17"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
-              <Cell N="Size" U="PT" V="0.0500000"/>
+              <Cell N="Size" U="PT" V="0.075"/>
             </Row>
           </Section>
           <Section N="Geometry" IX="0">
@@ -3972,6 +4567,20 @@ DMV TRAINING
             <Row IX="1">
               <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+            </Row>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -4020,7 +4629,7 @@ DMV TRAINING
               <Cell N="Style" V="17"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
-              <Cell N="Size" U="PT" V="0.0500000"/>
+              <Cell N="Size" U="PT" V="0.075"/>
             </Row>
           </Section>
           <Section N="Geometry" IX="0">
@@ -4041,6 +4650,20 @@ DMV TRAINING
               <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
             </Row>
           </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
+            </Row>
+          </Section>
         </Shape>
         <Shape ID="63" Type="Shape" MasterShape="11">
           <Cell N="PinX" V="2.478862323810528" F="Sheet.58!Width*0.49889053057822"/>
@@ -4049,8 +4672,6 @@ DMV TRAINING
           <Cell N="Height" V="0.2000469482421875" F="Inh"/>
           <Cell N="LocPinX" V="0.828125" F="Inh"/>
           <Cell N="LocPinY" V="0.1000234741210938" F="Inh"/>
-          <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-          <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
           <Cell N="FillPattern" V="36"/>
           <Cell N="ShdwForegnd" V="0"/>
           <Cell N="ShdwPattern" V="0"/>
@@ -4092,7 +4713,7 @@ DMV TRAINING
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -4119,14 +4740,23 @@ DMV TRAINING
           <Text><cp IX="0"/><fld IX="0">July 23, 2018</fld>
 Version 3.0
 </Text>
-          <Section N="FillGradient">
+          <Section N="Paragraph">
             <Row IX="0">
-              <Cell N="GradientStopColor" V="#e7e4cd"/>
-              <Cell N="GradientStopColorTrans" V="0"/>
+              <Cell N="Align" V="1"/>
             </Row>
-            <Row IX="1">
-              <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-              <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -4136,8 +4766,6 @@ Version 3.0
           <Cell N="Height" V="0.3875" F="Inh"/>
           <Cell N="LocPinX" V="0" F="Width*0"/>
           <Cell N="LocPinY" V="0" F="Height*0"/>
-          <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-          <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
           <Cell N="FillPattern" V="36"/>
           <Cell N="ShdwForegnd" V="0"/>
           <Cell N="ShdwPattern" V="0"/>
@@ -4175,7 +4803,7 @@ Version 3.0
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -4207,14 +4835,23 @@ Version 3.0
           </Section>
           <Text><cp IX="0"/>Frank Hoonhout
 </Text>
-          <Section N="FillGradient">
+          <Section N="Paragraph">
             <Row IX="0">
-              <Cell N="GradientStopColor" V="#e7e4cd"/>
-              <Cell N="GradientStopColorTrans" V="0"/>
+              <Cell N="Align" V="1"/>
             </Row>
-            <Row IX="1">
-              <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-              <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -4223,8 +4860,6 @@ Version 3.0
           <Cell N="Width" V="1.65625" F="Inh"/>
           <Cell N="Height" V="0.3875" F="Inh"/>
           <Cell N="LocPinX" V="1.65625" F="Inh"/>
-          <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-          <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
           <Cell N="FillPattern" V="36"/>
           <Cell N="ShdwForegnd" V="0"/>
           <Cell N="ShdwPattern" V="0"/>
@@ -4262,7 +4897,7 @@ Version 3.0
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -4316,14 +4951,23 @@ Version 3.0
           </Section>
           <Text><cp IX="0"/><fld IX="0">U:\DOCUMENTATION\DRAWINGS\ODOT\</fld><fld IX="1">SLM-DMVOSCI.VSDX</fld>
 </Text>
-          <Section N="FillGradient">
+          <Section N="Paragraph">
             <Row IX="0">
-              <Cell N="GradientStopColor" V="#e7e4cd"/>
-              <Cell N="GradientStopColorTrans" V="0"/>
+              <Cell N="Align" V="1"/>
             </Row>
-            <Row IX="1">
-              <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-              <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -4334,8 +4978,6 @@ Version 3.0
           <Cell N="Height" V="0.3444924099392361" F="Inh"/>
           <Cell N="LocPinX" V="0.6767925616707901" F="Inh"/>
           <Cell N="LocPinY" V="0.1722462049696181" F="Inh"/>
-          <Cell N="FillForegnd" V="#23b8e9" F="THEMEVAL(&quot;FillColor&quot;,1)"/>
-          <Cell N="FillBkgnd" V="Themed" F="THEMEVAL()"/>
           <Cell N="FillPattern" V="36"/>
           <Cell N="ShdwForegnd" V="0"/>
           <Cell N="ShdwPattern" V="0"/>
@@ -4368,7 +5010,7 @@ Version 3.0
               <Cell N="Font" V="Calibri" F="THEMEVAL(&quot;LatinFont&quot;,4)"/>
               <Cell N="Color" V="#000000"/>
               <Cell N="Style" V="17"/>
-              <Cell N="Size" V="0.0500000" U="PT"/>
+              <Cell N="Size" V="0.075" U="PT"/>
               <Cell N="AsianFont" V="0"/>
               <Cell N="ComplexScriptFont" V="0"/>
             </Row>
@@ -4387,14 +5029,23 @@ Version 3.0
           </Section>
           <Text><cp IX="0"/>DMV at OSCI
 </Text>
-          <Section N="FillGradient">
+          <Section N="Paragraph">
             <Row IX="0">
-              <Cell N="GradientStopColor" V="#e7e4cd"/>
-              <Cell N="GradientStopColorTrans" V="0"/>
+              <Cell N="Align" V="1"/>
             </Row>
-            <Row IX="1">
-              <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
-              <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+          </Section>
+          <Section N="Prop">
+            <Row N="DeviceName" IX="0">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Location" IX="1">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="Notes" IX="2">
+              <Cell N="Value" V=""/>
+            </Row>
+            <Row N="VLAN" IX="3">
+              <Cell N="Value" V=""/>
             </Row>
           </Section>
         </Shape>
@@ -4407,6 +5058,20 @@ Version 3.0
         <Row IX="1">
           <Cell N="GradientStopColor" V="#23b8e9" F="Inh"/>
           <Cell N="GradientStopColorTrans" V="0" F="Inh"/>
+        </Row>
+      </Section>
+      <Section N="Prop">
+        <Row N="DeviceName" IX="0">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Location" IX="1">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="Notes" IX="2">
+          <Cell N="Value" V=""/>
+        </Row>
+        <Row N="VLAN" IX="3">
+          <Cell N="Value" V=""/>
         </Row>
       </Section>
     </Shape>
