@@ -5,6 +5,5 @@
 5. python ai_standardize.py (json --> standardized json)
 6. python footer.py (has to be before json_to_xml.py every time) 
 7. python json_to_xml.py (standardized json --> standardized xml)
-8. python footer.py (again)
 9. python create_vsdx.py (standardized zip --> standardized vsdx)
 10. download output.vsdx
