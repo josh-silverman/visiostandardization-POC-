@@ -167,8 +167,8 @@ def main():
     
     # Professional sidebar
     with st.sidebar:
-        st.header("🎛️ Controls")
-        
+        st.image("GlobalLogo_NTTDATA_FutureBlue_RGB.png", width=200)
+        st.markdown("---")        
         # File upload section
         st.markdown("### 📁 File Upload")
         uploaded_file = st.file_uploader(
